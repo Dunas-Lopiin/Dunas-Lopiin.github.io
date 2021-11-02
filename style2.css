@@ -134,7 +134,7 @@ article{
     justify-content: center;
     flex-flow: column wrap;
     flex:auto;
-    align-items: center;
+    align-items: flex-start;
 }
 
 #formacao{
@@ -144,7 +144,7 @@ article{
     justify-content: center;
     flex-flow: column wrap;
     flex:auto;
-    align-items: center;
+    align-items: flex-start;
 }
 
 #experiencia{
@@ -154,7 +154,7 @@ article{
     justify-content: center;
     flex-flow: column wrap;
     flex:auto;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .listas{
@@ -170,7 +170,7 @@ article{
     justify-content: center;
     flex-flow: column wrap;
     flex:auto;
-    align-items: center;
+    align-items: flex-start;
 }
 
 #conhecimentos ul{
@@ -187,7 +187,7 @@ article{
     justify-content: center;
     flex-flow: column wrap;
     flex:auto;
-    align-items: center;
+    align-items: flex-start;
 }
 
 #certificacoes ul{
@@ -195,5 +195,5 @@ article{
     padding-bottom: 10px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
