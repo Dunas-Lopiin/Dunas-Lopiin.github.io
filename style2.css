@@ -1,3 +1,99 @@
+@media screen and (max-width: 600px) {
+    nav {
+        display: none;
+      }
+
+      .menu {
+        display: none;
+      }
+    
+    .navegacao {
+      display: none;
+    }
+
+    .nome{
+        display: none;
+    }
+
+    article{
+        padding-left: 5%;
+        padding-right: 5%;
+        display: flex;
+        height: 100%;
+        flex-flow: row wrap;
+        flex:auto;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    
+    .navegacao{
+        margin: 0;
+        right: 0;
+        background-color: #212529;
+        height: 100%;
+        width: 10rem;
+        display:flex;
+        position:fixed;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-flow:column wrap;
+        flex: auto;
+    }
+    
+    .nome{
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #F1E3D3;
+        text-shadow: -2px 2px #090C08;
+    }
+    
+    .menu{
+        padding: 0 10px;
+        display: flex;
+        list-style: none;
+        justify-content: center;
+        align-items: center;
+        flex-flow:column wrap;
+        flex:auto;
+        
+    }
+    
+    nav ul{
+        padding: 0;
+    }
+    
+    nav li{
+        display: flex;
+        justify-content: space-between;
+        font-size: large;
+        flex-wrap: wrap;
+        flex: auto;  
+    }
+    
+    nav a{
+        text-decoration: none;
+        color: #F1E3D3;
+        text-shadow: -1px 1px #090C08;
+    }
+    
+    nav a:hover{
+        color: #D88C9A;
+    }
+    
+    article{
+        padding-left: 5%;
+        padding-right: 11rem;
+        display: flex;
+        height: 100%;
+        flex-flow: row wrap;
+        flex:auto;
+    }
+}
+
 body{
     font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
@@ -17,78 +113,16 @@ h1, h2{
     text-transform: uppercase;
     font-weight: bold;
     color: #090C08;
+    text-align: justify;
 }
 
 main{
     background-color: #99C1B9;  
 }
 
-.navegacao{
-    margin: 0;
-    right: 0;
-    background-color: #212529;
-    height: 100%;
-    width: 10rem;
-    display:flex;
-    position:fixed;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-flow:column wrap;
-    flex: auto;
-    box-shadow: inset 0 0 0.5em #F1E3D3;
-}
 
-.nome{
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 1.5em;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: #F1E3D3;
-    text-shadow: -2px 2px #090C08;
-}
 
-.menu{
-    padding: 0 10px;
-    display: flex;
-    list-style: none;
-    justify-content: center;
-    align-items: center;
-    flex-flow:column wrap;
-    flex:auto;
-    
-}
 
-nav ul{
-    padding: 0;
-}
-
-nav li{
-    display: flex;
-    justify-content: space-between;
-    font-size: large;
-    flex-wrap: wrap;
-    flex: auto;  
-}
-
-nav a{
-    text-decoration: none;
-    color: #F1E3D3;
-    text-shadow: -1px 1px #090C08;
-}
-
-nav a:hover{
-    color: #D88C9A;
-}
-
-article{
-    padding-left: 5%;
-    padding-right: 11rem;
-    display: flex;
-    height: 100%;
-    flex-flow: row wrap;
-    flex:auto;
-}
 
 #dados{
     height: 50%;
@@ -98,6 +132,11 @@ article{
     align-items: center;
     flex-flow: column wrap;
     flex:auto;
+}
+
+#dados img{
+    height: 250px;
+    width: 250px;
 }
 
 .textao{
