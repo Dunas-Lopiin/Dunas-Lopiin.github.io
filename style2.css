@@ -1,4 +1,4 @@
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
     nav {
         display: none;
       }
@@ -23,16 +23,60 @@
         flex-flow: row wrap;
         flex:auto;
     }
+
+    #dados{
+        height: 50%;
+        background-color: #F8F9FA;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column wrap;
+        flex:auto;
+    }
+    
+    .textao{
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        overflow: hidden;
+        flex:auto;
+        min-width: 0;
+        align-items: center;
+    }
+    
+    .redonda{
+        margin: 0 auto;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        border-style: solid;
+        border-width: 6px;
+        border-color: #8D959D;
+        overflow: hidden;
+        align-self: center;
+    }
+    
+    .textao p{
+        align-self: flex-start;
+        text-align: justify;
+        font-size: 1em;
+        color: #090C08;
+    }
+    .textao h1 {
+        align-self: flex-start;
+        padding: 0;
+        margin: 0;
+    }
 }
 
-@media screen and (min-width: 601px) {
+@media screen and (min-width: 801px) {
     
     .navegacao{
         margin: 0;
         right: 0;
         background-color: #212529;
         height: 100%;
-        width: 10rem;
+        width: 9rem;
         display:flex;
         position:fixed;
         justify-content: space-evenly;
@@ -71,7 +115,8 @@
         justify-content: space-between;
         font-size: large;
         flex-wrap: wrap;
-        flex: auto;  
+        flex: auto;
+        font-size: 1em;
     }
     
     nav a{
@@ -91,8 +136,66 @@
         height: 100%;
         flex-flow: row wrap;
         flex:auto;
+        
+    }
+
+    #dados{
+        height: 50%;
+        background-color: #F8F9FA;
+        display: flex;
+        justify-content: center;
+        flex-flow: column wrap;
+        flex:auto;
+    }
+
+    .textao{
+        width: 40%;
+        margin-left: 5%;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        overflow: hidden;
+        flex:auto;
+        min-width: 0;
+    }
+    
+    .redonda img{
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        border-style:solid;
+        border-width: 6px;
+        border-color: #8D959D;
+        overflow: hidden;
+        justify-self: center;
+        margin-bottom: 20px;
+    }
+    
+    .textao p{
+        font-size: 1em;
+        color: #090C08;
+        text-align: justify;
+        align-self: flex-start;
+    }
+    .textao p {
+        padding: 0;
+        margin: 0;
+    }
+
+    .textao h1, h2 {
+        align-self: flex-start;
+        padding: 0;
+        
+    }
+    
+
+    .conteudos{
+        display: flex;
+        flex-direction: row;
     }
 }
+
+
 
 body{
     font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -108,8 +211,15 @@ li{
     font-weight: bold;
 }
 
-h1, h2{
+main h1{
     font-size: 1.5em;
+}
+
+main h2{
+    font-size: 1.3em;
+}
+
+h1, h2{
     text-transform: uppercase;
     font-weight: bold;
     color: #090C08;
@@ -122,61 +232,7 @@ main{
 
 
 
-
-
-#dados{
-    height: 50%;
-    background-color: #F8F9FA;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column wrap;
-    flex:auto;
-}
-
-#dados img{
-    height: 250px;
-    width: 250px;
-}
-
-.textao{
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    overflow: hidden;
-    flex:auto;
-    min-width: 0;
-    align-items: center;
-}
-
-.redonda{
-    width: 250px;
-    height: 250px;
-    align-self: center;
-    border-radius: 50%;
-    border-style: double;
-    border-width: 4px;
-    border-color: #212529;
-    overflow: hidden;
-}
-
-.textao p{
-    padding-left: 20px;
-    font-size: 1em;
-    color: #090C08;
-}
-
 #perfil{
-    background-color: #E9ECEF;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-flow: column wrap;
-    flex:auto;
-    align-items: flex-start;
-}
-
-#formacao{
     background-color: #DEE2E6;
     height: 100%;
     display: flex;
@@ -186,8 +242,18 @@ main{
     align-items: flex-start;
 }
 
-#experiencia{
+#formacao{
     background-color: #CED4DA;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    flex:auto;
+    align-items: flex-start;
+}
+
+#experiencia{
+    background-color: #BEC5CC;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -220,7 +286,7 @@ main{
 }
 
 #certificacoes{
-    background-color: #6C757D;
+    background-color: #8D959D;
     height: 100%;
     display: flex;
     justify-content: center;
