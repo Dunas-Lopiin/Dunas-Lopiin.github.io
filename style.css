@@ -27,7 +27,6 @@ html {
         flex-flow: row wrap;
         flex:auto;
         justify-content: space-between;
-        transition: 0.8s;
     }
 
     #dados{
@@ -143,7 +142,7 @@ html {
         height: 100%;
         flex-flow: row wrap;
         flex:auto;
-        transition: 0.8s;
+        
     }
 
     #dados{
@@ -240,50 +239,40 @@ h1, h2{
     text-align: justify;
 }
 
-#dados:hover{
-    background-color: #8D9399;
+main{
+    background-color: #99C1B9;  
 }
 
+
+
 #perfil{
-    background-color: #F8F9FA;
+    background-color: #DEE2E6;
     height: 100%;
     display: flex;
     justify-content: center;
     flex-flow: column wrap;
     flex:auto;
     align-items: flex-start;
-}
-
-#perfil:hover{
-    background-color: #8D9399;
 }
 
 #formacao{
-    background-color: #F8F9FA;
+    background-color: #C0C6CC;
     height: 100%;
     display: flex;
     justify-content: center;
     flex-flow: column wrap;
     flex:auto;
     align-items: flex-start;
-}
-
-#formacao:hover{
-    background-color: #8D9399;
 }
 
 #experiencia{
-    background-color: #F8F9FA;
+    background-color: #A6ACB3;
     height: 100%;
     display: flex;
     justify-content: center;
     flex-flow: column wrap;
     flex:auto;
     align-items: flex-start;
-}
-
-#experiencia:hover{
-    background-color: #8D9399;
 }
 
 .listas{
@@ -293,7 +282,7 @@ h1, h2{
 }
 
 #conhecimentos{
-    background-color: #F8F9FA;
+    background-color: #8D9399;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -309,22 +298,14 @@ h1, h2{
     flex-direction: column;
 }
 
-#conhecimentos:hover{
-    background-color: #8D9399;
-}
-
 #certificacoes{
-    background-color: #F8F9FA;
+    background-color: #737980;
     height: 100%;
     display: flex;
     justify-content: center;
     flex-flow: column wrap;
     flex:auto;
     align-items: flex-start;
-}
-
-#certificacoes:hover{
-    background-color: #8D9399;
 }
 
 #certificacoes ul{
