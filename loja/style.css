@@ -1,0 +1,792 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
+@media screen and (max-width: 700px) {
+
+    .nav3{
+        visibility: hidden;
+    }
+
+    .form{
+        display:flex;
+        flex-direction: column;
+        width: 20em;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0;
+    }   
+
+    .menuflutuante{
+        visibility: hidden;
+    }
+
+}
+
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+}
+
+::placeholder{
+    font-family: 'Futura LT Light';
+    color: white;
+}
+
+input{
+    font-family: 'Futura LT Light';
+    color: white;
+}
+
+input:focus, select:focus, textarea:focus, button:focus {
+    outline: none;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.nav1{
+    font-family: 'Futura LT Light';
+    display:flex;
+    background-color: #847548;
+    min-height: 48px;
+    width: auto;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex: auto;   
+}
+
+.nav1 a{
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    padding-left: 1em;
+    padding-right: 2em;
+    margin: 0;
+}
+
+
+.nav1 a:visited{
+    color: white;
+}
+
+.direita{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 0 1 auto; 
+}
+
+.esquerda{
+    display: flex;  
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 0 1 auto; 
+}
+
+#pesquisa{
+    background-color: transparent;
+    border: none;
+    align-self: center;
+}
+
+#foco:hover{
+    padding: 8px 0;
+    border-bottom: solid 1px white;
+}
+
+#foco:focus-within{
+    border-bottom: solid 1px white;
+    padding: 8px 0;
+}
+
+.nav2{
+    display:flex;
+    background-color: white;
+    min-height: 65px;
+    width: auto;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex: auto;
+}
+
+.nav2 a{
+    color:#3B3626;
+    text-decoration: none;
+}
+
+.menu{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    flex:auto;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: auto; 
+
+}
+
+.menu li{
+    width: 140px;
+    text-align: center;
+}
+
+.nav2 a{
+    color: #847548;
+}
+
+.nav3{
+    position: fixed;
+    right: 5%;
+    width: 15em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex: auto; 
+}
+
+.nav3 a{
+    color:#5E5D5D;
+    text-decoration: none;
+    font-family: 'Futura LT Light';
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 1s;
+}
+
+.nav3 a:visited{
+    color:#5E5D5D;
+}
+
+.lateral{
+    list-style: none;
+    margin-right: 5%;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    text-align: right;
+    
+}
+
+.nav3 svg{
+    padding-left: 14px;
+}
+
+.menuflutuante{
+    display: flex;
+    position: fixed;
+    bottom: 3%;
+    right: 1.5%;
+    width: 64px;
+    height: 64px;
+    background-color: #847548;
+    justify-content: center;
+    align-items: center;
+    border-style: hidden;
+    box-shadow: 0 0 2px white;
+    flex-wrap: wrap;
+    flex: auto; 
+}
+
+.parallax {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    /* The image used */
+    background-image: url("imagens/background/bg-plantas.webp");
+  
+    /* Set a specific height */
+    min-height: 600px;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    
+  }
+
+  .middlebox{
+    display: flex;
+    width: 490px;
+    min-width: 245px;
+    height: 240px;
+    min-height: 120px;
+    align-self: center;
+    justify-content: center;
+    background-color: white;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+  }
+
+  #borderbox{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    padding: 0;
+    width: 480px;
+    height: 230px;
+    border: 1px solid #847548;
+    flex-wrap: wrap;
+  }
+
+  #principal{
+    color: #847548;
+    font-family: 'Futura LT Book';
+    font-size: 43px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 0.1em;
+  }
+
+  #sub{
+    display: flex;
+    align-self: center;
+    color: #847548;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 17px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.6em;
+    margin: 0;
+    border-top: 1px solid #847548;
+    padding-top: 10px;
+    flex-wrap: wrap;
+}
+
+article{
+    margin: 0 14%;
+    padding: 5% 0;
+    
+}
+
+.info{
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+    align-content: center;
+    border-bottom: 1px solid #847548;
+    flex-wrap: wrap;
+    flex: auto; 
+    
+}
+
+.info h2{
+    font-family: 'Futura LT Light';
+    letter-spacing: 0.25em;
+    font-size: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: lighter;
+    
+
+}
+
+.infoinside{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: 'Futura LT Light';
+    text-align: center;
+    flex-wrap: wrap;
+    flex: auto; 
+    
+}
+
+.infoinside h2{
+    color: #847548;
+}
+
+.info p, h2{
+    color: #847548;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.produtos{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex: auto;
+}
+
+.item ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    flex-wrap: wrap;
+    flex: auto; 
+}
+
+.item li{
+    display:flex;
+    flex-wrap: wrap;
+    flex: auto; 
+}
+
+.tag{
+    font-family: 'Futura LT Light';
+    font-size: 16px;
+    display: flex;
+    height: 20px;
+    padding: 5px 10px;
+    color: white;
+    align-self: flex-start;
+    justify-self: flex-start;
+    background-color: #847548;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+.pop{
+    text-decoration: none;
+}
+
+.pop:visited{
+    color: #847548;
+}
+
+.pop:hover .taghidden{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.taghidden{
+    position: absolute;
+    font-family: 'Futura LT Light';
+    font-size: 13px;
+    height: 20px;
+    width: 280px;
+    padding: 10px;
+    color: #53492a;
+    align-self: flex-end;
+    justify-self: center;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.3s;
+
+
+}
+
+.promo{
+    text-decoration: line-through;
+}
+
+.vender{
+    height: 280px;
+    width: 280px;
+    background-size: 280px;
+}
+
+.item a{
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}
+
+#item1{
+    background-image: url("imagens/almofada-01.png");
+}
+
+#item1:hover{
+    background-image: url("imagens/almofada-01-zoom.png");
+}
+
+#item2{
+    background-image: url("imagens/almofada-02.png");
+}
+
+#item2:hover{
+    background-image: url("imagens/almofada-02-zoom.png");
+}
+
+#item3{
+    background-image: url("imagens/almofada-03.png");
+}
+
+#item3:hover{
+    background-image: url("imagens/almofada-03-zoom.png");
+}
+
+#item4{
+    background-image: url("imagens/almofada-04.png");
+}
+
+#item4:hover{
+    background-image: url("imagens/almofada-04-zoom.png");
+}
+
+#item5{
+    background-image: url("imagens/almofada-05.png");
+}
+
+#item5:hover{
+    background-image: url("imagens/almofada-05-zoom.png");
+}
+
+#item6{
+    background-image: url("imagens/almofada-06.png");
+}
+
+#item6:hover{
+    background-image: url("imagens/almofada-06-zoom.png");
+}
+
+#item7{
+    background-image: url("imagens/almofada-07.png");
+}
+
+#item7:hover{
+    background-image: url("imagens/almofada-07-zoom.png");
+}
+
+#item8{
+    background-image: url("imagens/almofada-08.png");
+}
+
+#item8:hover{
+    background-image: url("imagens/almofada-08-zoom.png");
+}
+
+#item9{
+    background-image: url("imagens/almofada-09.png");
+}
+
+#item9:hover{
+    background-image: url("imagens/almofada-09-zoom.png");
+}
+
+.produtos h2{
+    color: #847548;
+    font-family: 'Metropolis ExtraLight';
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.25em;
+}
+
+.nome{
+    text-align: center;
+    font-family: 'Futura LT Book';
+    font-size: 16px;
+    color: #847548;
+    text-transform: capitalize;
+    margin: 0;
+    padding: 0;
+}
+
+.preco{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Futura LT Book';
+    font-size: 13px;
+    color: #847548;
+    text-transform: capitalize;
+}
+
+#sobre{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-color: #847548;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    flex:auto;
+}
+
+#sobre p, h2{
+    color: white;
+}
+
+#sobre h2{
+    font-family: 'Metropolis ExtraLight';
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.25em;
+}
+
+.paragrafo{
+    display: flex;
+    align-self: center;
+    width: 45vw;
+    text-align: center;
+    font-family: 'Futura LT Light';
+    font-size: 15px;
+    line-height: 1.8em;
+    letter-spacing: 0.08em;
+    padding: 3% 0;
+    flex-wrap: wrap;
+    flex: auto; 
+}
+
+.linha{
+    margin: 0 auto;
+    display:flex;
+    width: 45vw;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#fim {
+    display: flex;
+    justify-content: center;
+
+    /* The image used */
+    background-image: url("imagens/background/bg-tucano.webp");
+  
+    /* Set a specific height */
+    min-height: 600px;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    
+}
+
+#contato{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+#contato h2{
+    font-family: 'Metropolis ExtraLight';
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.25em;
+    color: #847548;
+}
+
+.preencher{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    text-align: center;
+    font-family: 'Futura LT Light';
+    font-size: 15px;
+    line-height: 1.8em;
+    letter-spacing: 0.15em;
+    padding: 3% 0;
+    color: #847548;
+    flex-wrap: wrap;
+}
+
+#form{
+    display:flex;
+    width: 45vw;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+}
+
+#form p{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;   
+    flex-wrap: wrap;
+}
+
+#form input{  
+    color: #847548;
+    font-family: 'Futura LT Light';
+    font-size: 15px;
+    letter-spacing: 0.15em;
+    padding-left: 1em;
+    border-color: #847548;
+    border: solid 1px;
+    width: 258px;
+}
+
+#form textarea{  
+    color: #847548;
+    font-family: 'Futura LT Light';
+    font-size: 15px;
+    letter-spacing: 0.15em;
+    padding-left: 1em;
+    border-color: #847548;
+    border: solid 1px;
+    width: 43.5vw;
+    min-width: 258px;
+    
+ 
+    
+}
+
+#form input:hover{
+    border:solid 2px #847548;
+}
+
+#form input:focus{
+    border:solid 2px #847548;
+}
+
+#form textarea:hover{
+    border:solid 2px #847548;
+}
+
+#form textarea:focus{
+    border:solid 2px #847548;
+}
+
+.preencher button{
+    display: flex;
+    width: 120px;
+    height: 31px;
+    background-color: #847548;
+    color:white;
+    font-family: 'Futura LT Light';
+    font-size: 15px;
+    border:none;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+}
+
+.footermenu{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    width: 100%;
+    border-top:1px solid #847548;
+    flex-wrap: wrap;
+    font-family: 'Futura LT Light';
+    font-size: 15px;
+    line-height: 1.7em;
+    justify-content: space-evenly;
+    font-weight: 600;
+}
+
+.coluna{
+    display: flex;
+    flex-direction: column;
+}
+
+.coluna a{
+    color: #847548;
+}
+
+.coluna a:visited{
+    color: #847548;
+}
+
+.menuvertical{
+    list-style: none;
+    color: #847548;
+    text-transform: capitalize;
+}
+
+.coluna input{  
+    color: #847548;
+    font-family: 'Futura LT Light';
+    font-size: 15px;
+    letter-spacing: 0.15em;
+    padding: 3px 0 3px 1em;
+    border-color: #847548;
+    border: solid 1px;
+    width: 296px;
+}
+
+.coluna input:hover{
+    border:solid 2px #847548;
+}
+
+.coluna input:focus{
+    border:solid 2px #847548;
+}
+
+.coluna button{
+    display: flex;
+    width: 313px;
+    height: 39px;
+    background-color: #847548;
+    color:white;
+    font-family: 'Futura LT Light';
+    font-size: 15px;
+    border:none;
+    justify-content: center;
+    align-items: center;    
+}
+
+footer{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #847548;
+    color:white;
+    font-family: 'Futura LT Light';
+    font-size: 13px;
+    padding: 2% 0;  
+    align-items: center;
+
+}
+.foot{
+    padding: 0;
+    margin: 0;
+}
+
+#icones{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+}
+
+#linha1{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#linha1 p{
+    padding-left: 1em;
+    font-size: 14px;
+}
+
+#linha2{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#linha2 svg{
+    padding-left: 0.5em;
+}
+
+#icones a{
+    color:white;
+    font-family: 'Futura LT Light';
+    font-size: 13px;
+}
+
+#icones a:visited{
+    color:white;
+    font-family: 'Futura LT Light';
+    font-size: 13px;
+}
