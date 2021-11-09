@@ -1,5 +1,14 @@
 @media screen and (max-width: 700px) { 
 
+    nav{
+        position:absolute;
+        top: 0;
+        width: 100%;
+        font-family: 'Open Sans', sans-serif;
+        min-height: 133px;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
     .menuflutuante{
         visibility: hidden;
     }
@@ -67,6 +76,18 @@
         max-width: 400px;
     }
 
+}
+
+@media screen and(min-width: 701px) {
+    nav{
+        position: sticky;
+        top: 0;
+        width: 100%;
+        font-family: 'Open Sans', sans-serif;
+        min-height: 133px;
+        background-color: rgba(255, 255, 255, 0.8);
+    
+    }
 }
 
 html{
