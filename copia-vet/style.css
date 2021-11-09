@@ -50,6 +50,25 @@
         flex:auto;
     }
     
+    .blocoinfo{
+        width: 100%;
+        flex-wrap: wrap;
+        flex:auto;
+    }
+
+    .linha{
+        width: 100%;
+        flex-wrap: wrap;
+        flex:auto;
+    }
+
+    .coluna{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        flex:auto;
+    }
+
     .contato-esq{
         width: 100%;
         flex: auto;
@@ -71,9 +90,27 @@
         flex-wrap: wrap;
     }
 
-    #local iframe{
+    #local{
         display: flex;
-        max-width: 400px;
+        width: 100%;
+        flex:auto;
+    }
+
+    #mapa{
+        display: flex;
+        flex:auto;
+
+    }
+
+    #mapa iframe{
+        height:100%;
+        width:100%;
+    }
+
+    #conteudo{
+        display: flex;
+        flex:auto;
+        width: 100%;
     }
 
 }
@@ -100,14 +137,8 @@ body{
     padding: 0;
 }
 
-nav{
-    position: sticky;
-    top: 0;
-    width: 100%;
-    font-family: 'Open Sans', sans-serif;
-    min-height: 133px;
-    background-color: rgba(255, 255, 255, 0.8);
-
+#mapa{
+    display: flex;
 }
 
 #ligue{
