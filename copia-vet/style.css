@@ -1,0 +1,530 @@
+@media screen and (max-width: 700px) { 
+
+    .menuflutuante{
+        visibility: hidden;
+    }
+
+    .men-esq{
+        width: 100%;
+        flex-wrap: wrap;
+        flex:auto;
+    }
+
+    .men-dir{
+        width: 100%;
+        flex-wrap: wrap;
+        flex:auto;
+    }
+
+    #servicos{
+        flex: auto;
+        width: 100%;
+    }
+
+    #serv{
+        width: 100%;
+        flex:auto;
+    }
+
+    #sob{
+        width: 100%;
+        flex:auto;
+    }
+
+    #contato{
+        width: 100%;
+        flex:auto;
+    }
+
+    #conta{
+        width: 100%;
+        flex:auto;
+    }
+    
+    .contato-esq{
+        width: 100%;
+        flex: auto;
+    }
+
+    .tabela{
+        width: 100%;
+        flex: auto;
+    }
+
+    .endereco{
+        width: 100%;
+        flex: auto;
+    }
+
+    #form{
+        width: 100%;
+        flex: auto;
+        flex-wrap: wrap;
+    }
+
+    #local iframe{
+        display: flex;
+        max-width: 400px;
+    }
+
+}
+
+html{
+    font-family: 'Open Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+    min-height: 133px;
+    background-color: rgba(255, 255, 255, 0.8);
+
+}
+
+#ligue{
+    padding-right: 15%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 32px;
+    background-color: #ededed;
+}
+
+#ligue p {
+    margin: 0;
+    align-self: center; 
+    color: #EC4A34;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#logo{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-family: 'Raleway', sans-serif;
+    color: #555555;
+    font-size: 25px;
+    text-transform: uppercase;
+    justify-content: center;
+}
+
+#plus{
+    color: #EC4A34;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#vet{
+    font-size: 13px;
+    color: #A0A0A0;
+}
+
+#links{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-family: 'Raleway', sans-serif;
+    color: #555555;
+    font-size: 13px;
+    text-transform: uppercase;
+    align-items: center;
+}
+
+#lista{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: space-between;
+    flex:auto;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: auto; 
+}
+
+#lista li{
+    width: 140px;
+    text-align: center;
+}
+
+#lista a{
+    color: #555555;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+#lista a:hover{
+    color: #28ADD1;
+    text-decoration: none;
+}
+
+#img-fundo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    background-image: url("imagens/dog.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 756px;
+    background-position: 50%;
+}
+
+.men-esq{
+    display: flex;
+    flex-wrap: wrap;
+    width: 36%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: #D3D3D366;
+    font-size: 45px;
+    font-family: 'Raleway', sans-serif;
+}
+
+#serv{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 6%;
+}
+
+.ola{
+    align-self: center;
+    text-transform: uppercase;
+}
+
+#historia{
+    align-self: center;
+    max-width: 265px;
+    margin-right: 1em;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 10%;
+}
+
+.men-esq button{
+    align-self: center;
+    min-width: 224px;
+    min-height: 37px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: white;
+    border: none;
+    background-color: #F56A56;
+    transition: 0.3s;
+}
+
+.men-esq button:hover{
+    background-color: #ff2200;
+}
+
+#servicos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 756px;
+
+}
+
+.men-dir{
+    display: flex;
+    flex-wrap: wrap;
+    width: 64%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: 'Raleway', sans-serif;
+    flex: auto;
+}
+
+.blocoinfo{
+    display: flex;
+    padding: 10%;
+    justify-content: space-around;
+    font-family: 'Open Sans', sans-serif;
+    color: #555555;
+}
+
+.linha {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+
+}
+
+.linha li{
+    display: flex;
+    align-items: center;
+    max-width: 350px;
+}
+
+.para{
+    padding-left: 2.5em;
+    font-size: 14px;
+}
+
+.titulo{
+    font-size: 20px;
+    padding-left: 1em;
+    text-transform: uppercase;
+}
+
+#sobre{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    background-image: url("imagens/azul.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 589px;
+    background-position: 50%;
+}
+
+.sobre-esq{
+    display: flex;
+    flex-wrap: wrap;
+    width: 36%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 45px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.sobre-esq p {
+    color: white;
+}
+
+#conte{
+    padding-top: 8%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#conteudo{
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 650px;
+    flex-wrap: wrap;
+    
+}
+
+#conteudo p {
+    color:white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+#contato{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 756px;
+}
+
+.contato-esq{
+    display: flex;
+    flex-wrap: wrap;
+    width: 36%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 45px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.contato-esq p {
+    color: black;
+}
+
+#sob{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 6%;
+}
+
+#conta{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 6%;
+}
+
+#local{
+    display: flex;
+    background-color: #D3D3D366;
+    justify-content: space-evenly;
+}
+
+
+.endereco{
+    display: flex;
+    align-items: flex-start;
+}
+
+.entre{
+    align-self: center;
+    text-transform: uppercase;
+    margin-left: 10%;
+}
+
+.tabela{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+    color: #555555;
+    list-style: none;
+    font-size: 14px;
+    max-width: 290px;
+    flex: 0 1 auto;
+}
+
+#tab1{
+    border-right: solid 1px #555555;
+    padding-right: 2em;
+}
+
+
+
+.titulo2 {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+#local iframe{
+    padding-left: 2em;
+}
+
+#form{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex: 0 1 auto;
+}
+
+#form input{
+    max-width: 255px;
+    width: 255px;
+    min-height: 30px;
+    padding-left: 1em;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    color: #555555;
+    margin-bottom: 3px;
+    border:none;
+    flex: 0 1 auto;
+}
+
+#form input:hover{
+    border: solid 1px #28ADD1;
+}
+
+#form input:focus{
+    border: solid 1px #28ADD1;
+}
+
+#mensagem{
+    display: flex;
+    max-width: 255px;
+    width: 280px;
+    min-height: 74px;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    color: #555555;
+    margin-bottom: 3px;
+    padding: 1em;
+    border:none;
+    flex: 0 1 auto
+}
+
+#mensagem:hover{
+    border: solid 1px #28ADD1;
+}
+
+#mensagem:focus{
+    border: solid 1px #28ADD1;
+}
+
+#topo{
+    display: flex;
+    flex-direction: column;
+    background-color: #28ADD1;
+    align-items: center;
+    justify-content: center;
+    max-height: 65px;
+    height: 65px;
+    margin: 0;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    flex: 0 1 auto;
+}
+
+#topo a{
+    color: white;
+    text-decoration: none;
+}
+
+#top{
+    margin: 0;
+}
+
+#topo a:visited{
+    color: white;
+}
+
+footer{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.menuflutuante{
+    display: flex;
+    position: fixed;
+    bottom: 3%;
+    right: 1.5%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: auto; 
+}
+
+.menuflutuante button{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;padding: 0 1em;
+    color: white;
+    border-style: none;
+    background-color: #F56A56;
+    min-width: 224px;
+    min-height: 56px;
+    box-shadow: 0 0 2px white;
+}
