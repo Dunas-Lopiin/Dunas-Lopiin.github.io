@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Metropolis Light';
+    src: local('Metropolis Light'), url("fonts/Metropolis-Light.woff2") format('woff2');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Metropolis ExtraLight';
+    src: local('Metropolis ExtraLight'), url("fonts/Metropolis-ExtraLight.woff2") format('woff2');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Metropolis Regular';
+    src: local('Metropolis Regular'), url("fonts/Metropolis-Regular.woff2") format('woff2');
+    font-style: normal;
+    font-weight: normal;
+}

@@ -1,0 +1,353 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    display:flex;
+    background-color: #362e26;
+    min-height: 54px;
+    justify-content: center;
+
+}
+
+.menu{
+    padding: 0 20%;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    flex:auto;
+    font-family: 'Metropolis Regular';
+    justify-content: space-around;
+    align-items: center;
+    font-size: 15px;
+}
+
+.menu a{
+    color: white;
+    text-decoration: none;
+}
+
+.menu a:visited{
+    color: white;
+}
+
+.parallax {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    /* The image used */
+
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#inicio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("imagens/parallax.webp");
+  
+    /* Set a specific height */
+    min-height: 900px;
+}
+
+
+
+#borderbox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#principal{
+    font-family: 'Cookie', cursive;
+    font-size: 172px;
+    color: white;
+    margin: 0;
+}
+
+#sub{
+    font-family: 'Metropolis Regular';
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.3em;
+    color: white;
+    margin: 0;  
+    padding-bottom: 1em;
+}
+
+#sobre{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background-image: url("imagens/parallax2.webp");
+    min-height: 460px;
+
+}
+
+#sobEsq{
+    text-align: center;
+    font-family: 'Metropolis Regular';
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    color: white;
+}
+
+#sobDir{
+    width: 600px;
+    font-family: 'Arimo', sans-serif;
+    color:white;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4em;
+}
+
+#nossos{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 460px;
+}
+
+#sabores{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: wrap; 
+    flex: auto;
+    font-family: 'Metropolis Regular';
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    color: black;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#textoImagem{
+ 
+    max-width: 840px;
+    font-family: 'Arimo', sans-serif;
+    color:black;
+    text-transform: none;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.4em;
+}
+
+#textoImagem img{
+    display: flex;
+    flex-wrap: wrap; 
+    max-width: 178px;
+    height: 175px;
+}
+
+#briga{
+    display: flex;
+    flex-wrap: wrap;  
+    flex: auto;  
+    list-style: none;
+    justify-content: space-between;
+}
+
+#briga li{
+    display: flex;
+    flex-wrap: wrap;   
+}
+
+#quem{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background-image: url("imagens/parallax3.webp");
+    min-height: 660px;
+}
+
+#quemEsq{
+    width: 420px;
+}
+
+#quemEsq p {
+    font-family: 'Arimo', sans-serif;
+    color:white;
+    text-transform: none;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.4em;
+}
+
+#quemEsq h2{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-family: 'Metropolis Regular';
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    color: white;
+    align-items: left;
+}
+
+#quemDir img{
+    flex-wrap: wrap;
+    flex:auto;
+    max-height: 450px;
+    max-width: 450px;
+    width: 100%;
+
+}
+
+#galeria{
+    background-image: url("imagens/row.png");
+    min-height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+#contato{
+    display: flex;
+    flex-wrap: wrap;
+    flex: auto;
+    width: 100%;
+    height: 560px;
+    color: white;
+    background-color: #362e26;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: solid 2px #6B5B4C80;
+}
+
+#contEsq{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-left: 15%;
+}
+
+#contEsq h2{
+    font-family: 'Metropolis Regular';
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    color: white;
+    text-align: center;
+    
+}
+
+#contEsq p{
+    font-family: 'Arimo', sans-serif;
+    color:white;
+    text-transform: none;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.4em;
+    text-align: center; 
+}
+
+#contDir{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 290px;
+    height: 290px;
+    font-family: 'Arimo', sans-serif;
+    color:white;
+    text-transform: none;
+    text-align: left;
+    font-size: 15px;
+    border: none;
+}
+
+#contDir input{
+    display: flex;
+    flex: 0 1 auto;
+    min-width: 380px;
+    width: 100%;
+    height: 30px;
+    background-color: #6B5B4C80; 
+    font-family: 'Arimo', sans-serif;
+    color:white;
+    text-transform: none;
+    text-align: left;
+    font-size: 15px; 
+    border: none;
+    padding-left: 1em;
+}
+
+input::placeholder{
+    color:white;
+}
+
+textarea::placeholder{
+    color: white;
+}
+
+#contDir textarea{
+    display: flex;
+    height: 121px;
+    flex: 0 1 auto;
+    padding: 1em 0 0 1em;
+    background-color: #6B5B4C80;
+    font-family: 'Arimo', sans-serif;
+    color:white;
+    text-transform: none;
+    text-align: left;
+    font-size: 15px;
+    border: none;
+}
+
+#contDir button{
+    width:90px;
+    height:38px;
+    align-self: flex-end;
+    background: linear-gradient(#90857B 0%, #90857B 50%, #6B5B4C 50%, #6B5B4C 100%);
+    border: none;
+    color: white;
+}
+
+#icones{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;   
+}
+
+footer{
+    position:absolute;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #362e26;
+    justify-content: center;
+    align-items: center;
+    color: #90857B;
+    font-family: 'Arimo', sans-serif;
+    font-size: 13px;
+    height: 90px;
+}
