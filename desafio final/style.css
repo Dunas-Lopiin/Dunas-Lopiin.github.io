@@ -135,12 +135,12 @@ main{
 
 /* Expande o conteudo da conquista e modifica a borda para melhor se enquadrar ao conteudo expandido */
 
-.dropConq:focus-within .contDropdown {
+.dropConq:hover .contDropdown {
     display: flex;
     flex-direction: column;
 }
 
-.dropConq:focus-within .conquistas{
+.dropConq:hover .conquistas{
     border-radius: 10px 10px 0 0;
 }
 
