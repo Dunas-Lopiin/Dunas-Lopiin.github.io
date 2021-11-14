@@ -125,11 +125,11 @@ main{
     justify-content: flex-end;
 }
 
-.dropConq:focus-within .iconIni{
+.dropConq:hover .iconIni{
     opacity: 0;
 }
 
-.dropConq:focus-within .iconAtv{
+.dropConq:hover .iconAtv{
     opacity: 1;
 }
 
