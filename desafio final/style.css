@@ -66,19 +66,19 @@ nav{
 .iconIni{
     position: absolute;
     opacity: 1;
+    transition: 1s;
 }
 
 .iconAtv{
     position: absolute;
     opacity: 0;
-
+    transition: 1s;
 }
 
 /* Configuração do icone do menu ao ser clicado (pode ser ativado quando as outras paginas forem implementadas)
 .change:focus .iconIni{
     opacity: 0;
 }
-
 .change:focus .iconAtv{
     opacity: 1;
 }
@@ -125,15 +125,36 @@ main{
     justify-content: flex-end;
 }
 
+.dropConq:focus-within .iconIni{
+    opacity: 0;
+    transform: rotate(180deg);
+}
+
+.dropConq:focus-within .iconAtv{
+    opacity: 1;
+    transform: rotate(180deg);
+}
+
 .dropConq:hover .iconIni{
     opacity: 0;
+    transform: rotate(180deg);
 }
 
 .dropConq:hover .iconAtv{
     opacity: 1;
+    transform: rotate(180deg);
 }
 
 /* Expande o conteudo da conquista e modifica a borda para melhor se enquadrar ao conteudo expandido */
+
+.dropConq:focus-within .contDropdown {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropConq:focus-within .conquistas{
+    border-radius: 10px 10px 0 0;
+}
 
 .dropConq:hover .contDropdown {
     display: flex;
@@ -171,4 +192,15 @@ main{
     text-align: center;
     font-size: 18px;
     border-bottom: solid 2px #2430AD;
+}
+
+.incompleta{
+    background-color: #cacaca;
+    color: #4b4b4b;
+    border-color: #4b4b4b;
+}
+
+.incompleta img{
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
 }
