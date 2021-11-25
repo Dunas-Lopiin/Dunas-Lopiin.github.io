@@ -1,0 +1,51 @@
+#calculadora{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 40%;
+    border-radius: 10px;
+    background-color: rgb(37, 37, 37);
+    color: white;
+    font-size: 1.2em;
+    box-shadow: 4px 4px 10px gold;
+}
+
+#info {
+    color: gold;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+#calculadora label{
+    font-size: 1.5em;
+}
+
+.numero{
+    font-size: 1.5em;
+    width: 60%;
+}
+
+.botoes{
+    margin-top: 10px;
+    display: flex;
+    width: 110px;
+    height: 60px;
+    justify-content: space-between;
+}
+
+.botoes button{
+    width: 50px;
+    height: 50px;
+    font-size: 2em;
+    text-align: center;
+}
+
+#resultado{
+    width: 80%;
+    text-align: center;
+    background-color: white;
+    color: black;
+    font-size: 1.5em;
+    overflow: auto;
+}

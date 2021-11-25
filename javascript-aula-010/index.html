@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Calculadora</title>
+</head>
+<body>
+    <article id="calculadora">
+        <h1>Calculadora</h1>
+        <p id="info">Para realizar operações com números quebrados, utilize o . (ponto) e não a ,(virgula).</p>
+        <label for="valor1">Insira o primeiro valor</label>
+        <input class="numero" type="number" id="valor1" name="valor1">
+        <label for="valor2">Insira o segundo valor</label>
+        <input class="numero" type="number" id="valor2" name="valor2">
+        <div class="botoes">
+            <button onclick="soma()">+</button>
+            <button onclick="subtracao()">-</button>
+        </div>
+        <div class="botoes">
+            <button onclick="divisao()">÷</button>
+            <button onclick="multiplicacao()">x</button>
+        </div>
+        
+        <h2>Resultado</h2>
+        <p id="resultado"></p>
+    </article>
+
+    <script src="scripts/script.js" defer></script>
+</body>
+</html>
