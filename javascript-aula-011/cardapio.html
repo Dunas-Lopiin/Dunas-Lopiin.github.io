@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Lovelanches: O que vale é a animação!</title>
+</head>
+<body>
+    <nav>
+        <a href="#"><span id="titulo">Lovelanches</span><br>
+        <span id="sub">O que vale é a animação!</span></a>
+    </nav>
+    <main>
+        <fieldset id="comanda">
+            <legend>Monte seu Lovelanche!</legend>
+            <div id="pao" class="tipo">
+                <h2>Escolha seu pão!</h2>
+                <div class="opcoes">
+                    <div class="conteudo">
+                        <input type="radio" name="pao" id="frances" value="3">
+                        <label for="frances">Pão Francês<br />R$3,00</label>
+                    </div>
+                    <div class="conteudo">
+                        <input type="radio" name="pao" id="australiano" value="8">
+                        <label for="australiano">Pão Australiano<br />R$8,00</label>
+                    </div>
+                    <div class="conteudo">
+                        <input type="radio" name="pao" id="brioche" value="6">
+                        <label for="brioche">Brioche<br />R$6,00</label>
+                    </div>
+                </div>
+            </div>
+    
+            <div id="hamburger" class="tipo">
+                <h2>Escolha seu hambúrger!</h2>
+                <div class="opcoes">
+                    <div class="conteudo">
+                        <input type="radio" name="burger" id="picanha" value="13">
+                        <label for="picanha">hambúrger de picanha<br />R$13,00</label>  
+                    </div>
+                    <div class="conteudo">
+                        <input type="radio" name="burger" id="costela" value="10">
+                        <label for="costela">hambúrger de costela<br />R$10,00</label>
+                    </div>
+                    <div class="conteudo">
+                        <input type="radio" name="burger" id="vegano" value="12">
+                        <label for="vegano">hambúrger vegano<br />R$12,00</label>
+                    </div>
+                </div>
+            </div>
+    
+            <div id="salada" class="tipo">
+                <h2>Escolha sua salada!</h2>
+                <div class="opcoes">
+                    <div class="conteudo">
+                        <input type="radio" name="salada" id="alface" value="1.5">
+                        <label for="alface">Alface<br />R$1,50</label>
+                    </div>
+                    <div class="conteudo">
+                        <input type="radio" name="salada" id="tomate" value="1.5">
+                        <label for="tomate">Tomate<br />R$1,50</label>
+                    </div>
+                    <div class="conteudo">
+                        <input type="radio" name="salada" id="sem" value="0">
+                        <label for="sem">Sem salada<br />R$0,00</label>
+                    </div>
+                </div>
+                
+            </div>
+    
+            <div id="queijo" class="tipo">
+                <h2>Escolha seu queijo!</h2>
+                <div  class="opcoes">
+                    <div class="conteudo">
+                        <input type="radio" name="queijo" id="mussarela" value="3">
+                        <label for="mussarela">Queijo Mussarela<br />R$3,00</label>
+                    </div>
+                    <div class="conteudo">
+                        <input type="radio" name="queijo" id="prato" value="3">
+                        <label for="prato">Queijo Prato<br />R$3,00</label>
+                    </div>
+                    <div class="conteudo">
+                        <input type="radio" name="queijo" id="cheddar" value="5">
+                        <label for="cheddar">Queijo Cheddar<br />R$5,00</label>
+                    </div>
+                </div>
+
+            </div>
+            <button onclick="fechar()">Fechar seu pedido</button>
+            <h2>Seu total é: R$<span id="total">0</span></h2>
+        </fieldset>
+    
+        <fieldset id="pedido">
+            <legend>Pedido a ser preparado</legend>
+            <p><b>Pão: </b><span id="paoPrep"></span></p>
+            <p><b>hambúrger: </b><span id="burgerPrep"></span></p>
+            <p><b>Salada: </b><span id="saladaPrep"></span></p>
+            <p><b>Queijo: </b><span id="queijoPrep"></span></p>
+        </fieldset>
+    </main>
+    <script src="scripts/script.js" defer></script>
+</body>
+</html>
