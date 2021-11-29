@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
+@media screen and (min-width: 601px) {
+
+    #area{
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: rgb(28, 80, 16);
+        border: solid 5px rgb(124, 45, 9);
+        color: white;
+        width: 600px;
+        min-height: 300px;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 1em;
+    } 
+    #quadro{
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        width: 600px;
+        justify-content: center;
+        align-items: center;
+    }
+    #campo img{
+        position: relative;
+        width: 10%;
+        height: 20%;
+        align-self: flex-end;
+        left: 0;
+        margin-top: -50px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    
+    #quadro{
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        width: 280px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #area{
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: rgb(28, 80, 16);
+        border: solid 5px rgb(124, 45, 9);
+        color: white;
+        width: 280px;
+        min-height: 280px;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 1em;
+    }
+    #campo img{
+        position: relative;
+        width: 20%;
+        height: 40%;
+        align-self: flex-end;
+        left: 0;
+        margin-top: -50px;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Pangolin', cursive;
+}
+
+#area p{
+    padding: 0;
+    margin: 0;
+}
+
+#campo{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    border: none;
+}
+
+label{
+    text-align: justify;
+    margin-bottom: 5px;
+}
+
+input{
+    border: solid 2px black;
+}
+
+.animado{
+    color: transparent;
+    position: relative;
+    white-space: nowrap;
+}
+
+.animado::after{
+    content: attr(giz);
+    color: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation: run-text 1s;
+    overflow: hidden;
+    width: 100%;
+}
+
+@keyframes run-text {
+    from { width: 0}
+    to { width: 100% }
+  }

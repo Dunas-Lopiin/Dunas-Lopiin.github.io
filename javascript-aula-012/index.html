@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>While do bart</title>
+</head>
+<body>
+    <fieldset id="campo">
+        <div id="quadro">
+            <h1>Ajude o Bart!</h1>
+            <label for="repeticao">Informe a quantidade de vezes que o Bart deve repetir a frase: "Eu nunca jamais usarei negativos duplos"</label>
+            <input name="repeticao" id="repeticao" type="number" placeholder="digite o número aqui...">
+            <p>Vezes que a lousa foi apagada: <span id="apagadinha"></span></p>
+            <p>Linhas escritas: <span id="linhas"></span></p>
+            <button onclick="novoTexto()">Aperte-me</button>  
+            <div id="area">
+                
+            </div>
+            <img src="imagens/bart.png">
+            
+        </div>
+        
+    </fieldset>
+    <script src="lousa.js" defer></script>
+</body>
+</html>
