@@ -1,0 +1,61 @@
+body{
+    margin: 0 auto;
+    background-image: url("imagens/quad.jpg");
+    background-repeat: repeat;
+}
+
+fieldset{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 20px auto;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    background-color: white;
+}
+
+.conteudo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 50px;
+    border: solid 1px black;
+    border-radius: 10px;
+    background-color: silver;
+    color: black;
+    margin-bottom: 10px;
+    font-weight: bold;
+    box-shadow: 3px 3px 5px black;
+}
+
+#exibicao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px double black;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px black;
+}
+
+button{
+    width: 300px;
+    height: 50px;
+    font-size: 2em;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    box-shadow: 3px 3px 5px black;
+}
+
+button:active{
+    background-color: green;
+}
+
+
+#resultados{
+    font-weight: bold;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"></link>
+    <title>Corrida</title>
+</head>
+<body>
+    <fieldset>
+        <h1>Grande corrida entre Pedro, Juca e Edna!</h1>
+        <p>Pedro, Juca e Edna decidiram apostar uma corrida com carros virtuais no javascript! Escolha o tipo de corrida e veja qual deles é o campeão!</p>
+        <div class="conteudo">
+            <input type="radio" name="campeonato" id="rapida" value="10">
+            <label for="rapida">Corrida Rápida (10 voltas)</label>
+        </div>
+        <div class="conteudo">
+            <input type="radio" name="campeonato" id="premio" value="70">
+            <label for="premio">Grande Premio (70 voltas)</label>
+        </div>
+        <div class="conteudo">
+            <input type="radio" name="campeonato" id="enduro" value="160">
+            <label for="enduro">Enduro (160 voltas)</label>
+        </div>
+    
+        <button onclick="corrida()">3, 2, 1, VAI!</button>
+        <div id="exibicao">
+            <h2 id="campeao">O campeão será exibido aqui!</h1>
+            <p id="resultados">Aqui serão exibidas o número de voltas vencidas por cada jogador!</p>
+        </div>
+
+    </fieldset>
+    <script src="corrida.js" defer></script>
+</body>
+</html>
