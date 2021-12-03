@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>jogo da velha</title>
+</head>
+<body>
+    <h1 id="titu">Jogo da velha</h1>
+    <main>
+        
+        <div id="linha1" class="linhas">
+            <button id="1" class="bot" onclick="jogada(0, 0, 1)"></button>
+            <button id="2" class="bot" onclick="jogada(0, 1, 2)"></button>
+            <button id="3" class="bot" onclick="jogada(0, 2, 3)"></button>
+        </div>
+        <div id="linha2" class="linhas">
+            <button id="4" class="bot" onclick="jogada(1, 0, 4)"></button>
+            <button id="5" class="bot" onclick="jogada(1, 1, 5)"></button>
+            <button id="6" class="bot" onclick="jogada(1, 2, 6)"></button>
+        </div>
+        <div id="linha3" class="linhas">
+            <button id="7" class="bot" onclick="jogada(2, 0, 7)"></button>
+            <button id="8" class="bot" onclick="jogada(2, 1, 8)"></button>
+            <button id="9" class="bot" onclick="jogada(2, 2, 9)"></button>
+        </div>
+    </main>
+    <div id="resultados">
+        <h2 id="vitoria"></h2>
+        <button id="novo" onclick="novoJogo()">Novo Jogo</button>
+    </div>
+
+    
+    <script src="jogo.js" defer></script>
+</body>
+</html>
