@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"></link>
+    <title>Corrida</title>
+</head>
+<body>
+    <fieldset>
+        <h1>Grande corrida entre Pedro, Juca e Edna!</h1>
+        <p>Pedro, Juca e Edna decidiram apostar uma corrida com carros virtuais no javascript! Escolha o tipo de corrida e veja qual deles é o campeão!</p>
+        <div class="conteudo">
+            <input type="radio" name="campeonato" id="rapida" value="10">
+            <label for="rapida">Corrida Rápida (10 voltas)</label>
+        </div>
+        <div class="conteudo">
+            <input type="radio" name="campeonato" id="premio" value="70">
+            <label for="premio">Grande Premio (70 voltas)</label>
+        </div>
+        <div class="conteudo">
+            <input type="radio" name="campeonato" id="enduro" value="160">
+            <label for="enduro">Enduro (160 voltas)</label>
+        </div>
+    
+        <button onclick="corrida()">3, 2, 1, VAI!</button>
+
+        <article id="jogadores">
+            <div id="Pedro" class="jog">
+                <p class="nome">Carro do Pedro</p>
+                <p><b>Tipo de carro: </b><span id="tipoP"></span></p>
+                <p><b>Velocidade Minima: </b><span id="vMinP"></span></p>
+                <p><b>Velocidade Máxima: </b><span id="vMaxP"></span></p>
+                <p><b>Percentual de derrapagem: </b><span id="derraP"></span></p>
+            </div>
+
+            <div id="Juca" class="jog">
+                <p class="nome">Carro do Juca</p>
+                <p><b>Tipo de carro: </b><span id="tipoJ"></span></p>
+                <p><b>Velocidade Minima: </b><span id="vMinJ"></span></p>
+                <p><b>Velocidade Máxima: </b><span id="vMaxJ"></span></p>
+                <p><b>Percentual de derrapagem: </b><span id="derraJ"></span></p>
+            </div>
+
+            <div id="Edna" class="jog">
+                <p class="nome">Carro da Edna</p>
+                <p><b>Tipo de carro: </b><span id="tipoE"></span></p>
+                <p><b>Velocidade Minima: </b><span id="vMinE"></span></p>
+                <p><b>Velocidade Máxima: </b><span id="vMaxE"></span></p>
+                <p><b>Percentual de derrapagem: </b><span id="derraE"></span></p>
+            </div>
+        </article>
+
+        <div id="exibicao">
+            <h2 id="campeao">O campeão será exibido aqui!</h1>
+            <p id="resultados">Aqui serão exibidas o número de voltas vencidas por cada jogador!</p>
+        </div>
+
+    </fieldset>
+    <script src="corrida.js" defer></script>
+</body>
+</html>
