@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Juros</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><h1>plinio F. S.</h1></li>
+        </ul>
+    </nav>
+    <main>
+        <article id="recibo">
+            <h2>NOVO RECIBO</h2>
+            <label for="nome">Nome do cliente:</label>
+            <input type="text" name="nome" id="nome" placeholder="Digite seu nome aqui...">
+            <label for="data">Data de vencimento:</label>
+            <input type="date" name="data" id="data">
+            <label for="valor">Valor da compra:</label>
+            <input type="number" name="valor" id="valor" placeholder="digite o valor da compra...">
+            <button onclick="recibo()">Armazenar informações</button>
+        </article>
+
+        <article id="output">
+            <h2>Vendas efetuadas</h2>
+            <table id="tabela">
+                <tr>
+                    <th>Cliente</th>
+                    <th>Vencimento</th>
+                    <th>Valor da compra</th>
+                    <th>Mora</th>
+                    <th>Juros</th>
+                    <th>Total a pagar</th>
+                  </tr>
+            </table>
+            <button onclick="reajuste(recibos)">Calcular juros</button>
+        </article>
+    </main>
+    <script src="calculo.js" defer></script>
+</body>
+</html>
