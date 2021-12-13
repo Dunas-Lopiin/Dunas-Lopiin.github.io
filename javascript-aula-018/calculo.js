@@ -67,7 +67,7 @@ function recibo(){
         Cliente: document.getElementById("nome").value,
         Vencimento: dia + '/' + mes + '/' + ano,
         VencimentoReal: document.getElementById("data").value,
-        Valor: parseFloat(document.getElementById("valor").value),
+        Valor: parseFloat(document.getElementById("valor").value).toFixed(2),
         Mora: '',
         Juros: '',
         Total: ''
