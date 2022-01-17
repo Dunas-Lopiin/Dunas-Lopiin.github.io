@@ -152,3 +152,9 @@ function tipoDeSorteio(){
     }
 }
 
+function novosNomes(...nomes){
+    return nomes;
+}
+
+let nomezitos = novosNomes("Fiona", "Shrek", "Burro", "Biscoito", "Lobo");
+console.log(nomezitos);
