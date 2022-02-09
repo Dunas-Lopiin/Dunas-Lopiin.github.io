@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+    <title>Cotação das moedas</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><h1>plinio F. S.</h1></li>
+        </ul>
+    </nav>
+    <main>
+       <div id="filtros">
+        <h1>Pesquisa de cotação de moedas</h1>
+        <p>Escolha a moeda que deseja pesquisar</p>
+           <div class="formulario">
+                <select name="tipo-moeda" id="tipo-moeda">
+                    <option>Alterar moeda</option>
+                </select>
+           </div>
+           
+           <div id="conteudo">
+            <table>
+                <th id="moedas" colspan="2"></th>
+                <tr>
+                    <td class="cotacao">Data e hora</td>
+                    <td><span id="val-data"></span></td>
+                </tr>
+                <tr>
+                    <td class="cotacao">Valor Compra</td>
+                    <td><span id="val-cotacao" class="high"></span></td>
+                 </tr>
+                 <tr>
+                    <td class="cotacao">Valor de venda</td>
+                    <td><span id="val-fechamento" class="low"></span></td>
+                 </tr>
+                 <tr>
+                    <td class="cotacao">Valor máximo</td>
+                    <td><span id="val-max" class="high"></span></td>
+                 </tr>
+                <tr>
+                    <td class="cotacao">Valor mínimo</td>
+                    <td><span id="val-min" class="low"></span></td>
+                 </tr>
+            </table>
+        </div>
+        <div id="form-pesquisa">
+            <div>
+                <h2>Pesquisar cotação por datas</h2>
+            </div>
+            <div class="formulario">
+                <label for="data-inicio">Data inicial</label>
+                <input type="date" id="data-inicio" name="data-inicio" placeholder="Data inicial">
+            </div>
+           <div class="formulario">
+                <label for="data-final">Data Final</label>
+                <input type="date" id="data-final" name="data-final" placeholder="Data final"> 
+            </div>
+            <button id="pesquisar">Pesquisar</button>   
+        </div>
+
+        <div id="conteudo-pesquisa">
+            <table id="tabela">
+                <th id="titulo" colspan="5"></th>
+                <tr>
+                    <th>Data e Hora</th>
+                    <th>Valor de Compra</th>
+                    <th>valor de Venda</th>
+                    <th>Valor Mínimo</th>
+                    <th>Valor Máximo</th>
+                 </tr>
+            </table>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

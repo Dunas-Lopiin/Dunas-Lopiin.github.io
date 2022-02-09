@@ -1,0 +1,134 @@
+body{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 50px;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    background-color: #7a75b5ee;
+    width: 100%;
+    height: 60px;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-transform: uppercase;
+}
+
+nav li{
+    float: left;
+
+}
+
+nav h1{
+    padding-left: 20px;
+    color: #EAF8BF;
+    text-shadow: -2px 2px #1F2041;
+}
+
+main{
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    justify-content: space-around;
+}
+
+#filtros{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+}
+
+#conteudo{
+    font-size: 1.2em;
+    margin: 0 auto;
+    width: 400px;
+}
+
+#filtros input{
+    width: 160px;
+    font-size: 1.1em;
+}
+
+.formulario{
+    display: flex;
+    width: 250px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    
+}
+
+#conteudo-pesquisa{
+    width: 670px;
+    margin-bottom: 20px;
+
+}
+
+#form-pesquisa{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px double black;
+    padding: 20px;
+    width: 400px;
+}
+
+#form-pesquisa h2{
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+select{
+    width: 250px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.high{
+    color: green;
+}
+.low{
+    color: red;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+}
+
+td, th {
+    border: 3px double #414141;
+    text-align: left;
+    padding: 8px;
+    text-align: center;
+}
+th{
+    font-size: 1.1em;
+    background-color:rgb(238, 229, 106);
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+h1{
+    margin: 0;
+}
