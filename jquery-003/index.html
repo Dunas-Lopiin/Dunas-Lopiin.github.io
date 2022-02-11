@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pesquisa de CEP</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><h1>plinio F. S.</h1></li>
+        </ul>
+    </nav>
+    <main>
+        <div id="filtros">
+            <h2>Pesquisa de CEP</h2>
+            <div class="formulario">
+                <label for="cep">Digite o CEP</label>
+                <input type="number" name="cep" id="cep" placeholder="01234567...">
+           </div>
+            <button id="pesquisar">Consultar</button>   
+        </div>
+        <div id="lado">
+            <div id="conteudo-pesquisa">
+                <table>
+                    <tr>
+                        <th colspan="2">Informações do endereço</th>
+                    </tr>
+                    <tr>
+                        <th>Endereço</th>
+                        <td id="rua"></td>
+                    </tr>
+                    <tr>
+                        <th>Bairro</th>
+                        <td id="bairro"></td>
+                    </tr>
+                    <tr>
+                        <th>Cidade</th>
+                        <td id="cidade"></td>
+                    </tr>
+                    <tr>
+                        <th>Estado</th>
+                        <td id="estado"></td>
+                    </tr>
+                    <tr>
+                        <th>CEP</th>
+                        <td id="con-cep"></td>
+                    </tr>
+                    <tr>
+                        <th>DDD</th>
+                        <td id="ddd"></td>
+                    </tr>
+                    <tr>
+                        <th>Latitude</th>
+                        <td id="lat"></td>
+                    </tr>
+                    <tr>
+                        <th>Longitude</th>
+                        <td id="long"></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="map">
+    
+            </div>
+       </div>
+    </main>
+    <script src="script.js"></script>
+
+</body>
+</html>
