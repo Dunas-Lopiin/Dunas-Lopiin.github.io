@@ -19,6 +19,7 @@ main{
     width: 300px;
     height: 300px;
     margin-bottom: 80px;
+
 }
 
 #loja img{
@@ -26,7 +27,7 @@ main{
     height: 20%;
 }
 
-.item{
+.item-fila{
     display: flex;
     justify-content: space-between;
     margin-bottom: -10px;
@@ -81,4 +82,21 @@ main{
 #cliente-1{
     height: 64px;
     width: 64px;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 2em;
+}
+
+nav h2{
+    padding: 0;
+    margin: 10px;
 }

@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+    let pontuacao = 0;
     const ITENS = [
         {"name": "#armor1", "src": `assets/Kickpixel's - RPG Icons 1/armour_bronze.png`},
         {"name": "#arrow1", "src": `assets/Kickpixel's - RPG Icons 1/arrow_bronze.png`},
@@ -28,7 +29,7 @@ $(document).ready(function(){
     sorteio();
 
     console.log(itensPedido);
-    
+
     $( function() {
         $( ".item" ).draggable({
             revert: 'invalid'
@@ -39,6 +40,13 @@ $(document).ready(function(){
             $( this )
                 .switchClass( "ui-state-common", "ui-state-highlight", 500, "easeInOutQuad" )
                 .switchClass( "ui-state-highlight", "ui-state-common", 500, "easeInOutQuad" )
+                let id = ui.draggable.attr("id");
+                $(`#${id}`).draggable( "disable" );
+                pontuacao += 10;
+                $("#pontuacao").html(pontuacao);
+                if(pontuacao === 30){
+                    alert("Parabéns!");
+                }
             }
         });
       } 
