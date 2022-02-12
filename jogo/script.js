@@ -16,16 +16,19 @@ $(document).ready(function(){
     function sorteio(){
         itensPedido = [];
         const copia = ITENS;
-        const numero = ITENS.length - 1;
+        let numero = ITENS.length - 1;
         for(let i = 0; i < quantPedidos; i++){
+            numero = ITENS.length - 1;
             let sorteio = parseInt(Math.random() * (numero - 0) + 0);
             itensPedido.push(copia[sorteio]);
             copia.splice(sorteio, 1);
+            console.log(sorteio);
         }
     }
     sorteio();
 
     console.log(itensPedido);
+    
     $( function() {
         $( ".item" ).draggable({
             revert: 'invalid'
