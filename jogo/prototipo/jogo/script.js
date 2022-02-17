@@ -1,16 +1,16 @@
 $(document).ready(function(){
-
+    let lives = 3;
     let pontuacao = 0;
     const ITENS = [
-        {"name": "armor1", "src": `assets/escolhidos/1.png`, "value": "0"},
-        {"name": "arrow1", "src": `assets/escolhidos/2.png`, "value": "1"},
-        {"name": "axe1", "src": `assets/escolhidos/3.png`, "value": "2"},
-        {"name": "book1", "src": `assets/escolhidos/4.png`, "value": "3"},
-        {"name": "gem1", "src": `assets/escolhidos/5.png`, "value": "4"},
-        {"name": "heart1", "src": `assets/escolhidos/6.png`, "value": "5"},
-        {"name": "key1", "src": `assets/escolhidos/7.png`, "value": "6"}, 
-        {"name": "leaf1", "src": `assets/escolhidos/8.png`, "value": "7"},
-        {"name": "potion1", "src": `assets/escolhidos/18.png`, "value": "8"}
+        {"src": `assets/escolhidos/1.png`, "id": "0"},
+        {"src": `assets/escolhidos/2.png`, "id": "1"},
+        {"src": `assets/escolhidos/3.png`, "id": "2"},
+        {"src": `assets/escolhidos/4.png`, "id": "3"},
+        {"src": `assets/escolhidos/5.png`, "id": "4"},
+        {"src": `assets/escolhidos/6.png`, "id": "5"},
+        {"src": `assets/escolhidos/7.png`, "id": "6"}, 
+        {"src": `assets/escolhidos/8.png`, "id": "7"},
+        {"src": `assets/escolhidos/18.png`, "id": "8"}
     ];
     /* Itens necessários para fazer a poção */
     let itensPedido = [];
@@ -25,17 +25,16 @@ $(document).ready(function(){
     function encherPrateleiras(){
         for(let i = 0; i < 9; i++){
             if(i < 3){
-                $("#itens-1").append(`<img src="${ITENS[i].src}" id="${ITENS[i].name}" value="${ITENS[i].value}" class="item">`)
+                $("#itens-1").append(`<img src="${ITENS[i].src}" id="${ITENS[i].id}" class="item">`)
             }
             else if(i < 6){
-                $("#itens-2").append(`<img src="${ITENS[i].src}" id="${ITENS[i].name}" value="${ITENS[i].value}" class="item">`)
+                $("#itens-2").append(`<img src="${ITENS[i].src}" id="${ITENS[i].id}" class="item">`)
             }
             else{
-                $("#itens-3").append(`<img src="${ITENS[i].src}" id="${ITENS[i].name}" value="${ITENS[i].value}" class="item">`)
+                $("#itens-3").append(`<img src="${ITENS[i].src}" id="${ITENS[i].id}" class="item">`)
             }
         }
     }
-
     /* Sorteia os itens necessários para a poção */
     function sorteio(){
         itensPedido = [];
@@ -59,17 +58,30 @@ $(document).ready(function(){
                 pontuacao += 10;
                 $("#pontuacao").html(pontuacao);
                 alert("Parabéns!");
+                $("#mago").addClass("happyMage");
                 return true;
             }
             else{
-                alert("Errou!");
-                caldeirao = [];
-                sorteio();
-                setTimeout(mostrar(),5000);
+                lifeCount();
                 return true;
             }
         }
         return false;
+    }
+
+    function lifeCount(){
+        if(lives > 1){
+            $(`#life${lives}`).addClass("lostLife");
+            lives = lives -1;
+            alert("Errou!");
+            caldeirao = [];
+            sorteio();
+            setTimeout(mostrar(),5000);
+        }
+        else{
+            alert("Game Over!");
+        }
+        console.log(lives);
     }
 
     /* Ativa as funções iniciais */
@@ -88,44 +100,73 @@ $(document).ready(function(){
         accept: `.item`,
         drop: function( event, ui ) {
             $( this )
-                let id = ui.draggable.attr("id");
-                pocao(ui.draggable.attr("value"));
+                pocao(ui.draggable.attr("id"));
                 changeColor();
             }
-
     });
     
     /* Muda a cor da água */
     function changeColor(){
-        $("#agua").switchClass( "s1", "s3", 500, "easeInOutQuad" );
-        setTimeout(changeColor2, 500);
-    }
-    function changeColor2(){
-        $("#agua").switchClass( "s3", "s1", 500, "easeInOutQuad" );
+        const classList = $("#agua").attr("class");
+        $("#mago").addClass("moveMage");
+        console.log(classList);
+        $("#caudeirao").queue(function (next) {
+            $(this).addClass("cauldronShake");
+            if(classList === "s1" || classList === "waterBase"){
+                $("#agua").removeClass("s1");
+                $("#agua").removeClass("waterBase");
+                $("#agua").addClass("water1");
+            }
+            else if(classList === "water1") {
+                $("#agua").removeClass("water1");
+                $("#agua").addClass("water2");
+            }
+            else{
+                $("#agua").removeClass("water2");
+                $("#agua").addClass("waterBase");
+            }
+
+            next();
+        });
+        $("#caudeirao").delay(1500).queue(function (next) {
+            $(this).removeClass("cauldronShake");
+            $("#mago").removeClass("moveMage");
+            next();
+        });
     }
 
     /* Esconde os ingredientes necessários após eles serem mostrados ao jogador */
     function esconder(){
         console.log("entrou");
-        $(".pedido").delay(2000).fadeOut();
+        $(".pedido").delay(2000).queue(function(next) {
+            $(this).fadeOut();
+            next();
+        })
+        $(`#${itensPedido[0].id}`).delay(2000).queue(function(next) {
+            $(this).removeClass('itemShine');
+            $(`#${itensPedido[1].id}`).removeClass('itemShine');
+            $(`#${itensPedido[2].id}`).removeClass('itemShine');
+            next();
+        })
     }
     
     function mostrar(){
         $("#pedido").remove();
-        $("#cliente").delay(500).queue(function (next) {
+        $("#cliente").delay(1000).queue(function (next) {
             $(this).append(`<img src="${itensPedido[0].src}" id="pedido-1" class="pedido">`);
+            $(`#${itensPedido[0].id}`).addClass('itemShine');
             next();
         });
-        $("#cliente").delay(500).queue(function (next) {
+        $("#cliente").delay(1000).queue(function (next) {
             $(this).append(`<img src="${itensPedido[1].src}" id="pedido-2" class="pedido">`);
+            $(`#${itensPedido[1].id}`).addClass('itemShine');
             next();
         });
-        $("#cliente").delay(500).queue(function (next) {
+        $("#cliente").delay(1000).queue(function (next) {
             $(this).append(`<img src="${itensPedido[2].src}" id="pedido-3" class="pedido">`);
+            $(`#${itensPedido[2].id}`).addClass('itemShine');
             esconder();
             next();
         });
     }
-
-
 });

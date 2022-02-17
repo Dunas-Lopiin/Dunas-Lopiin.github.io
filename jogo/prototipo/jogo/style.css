@@ -22,17 +22,28 @@ main{
     background-image: url('assets/parede.png');
     background-size: cover;
     background-repeat: no-repeat;
-
     background-position: bottom;
 }
 
-#loja{
+nav{
     display: flex;
-    flex-direction: column;
-    margin-top: 100px;
-    width: 300px;
-    height: 300px;
-    padding-left: 30px;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 50%;
+    position: fixed;
+    top: 0;
+    margin: 0;
+    margin-left: 10%;
+    padding: 0;
+    font-size: 2em;
+    color: aliceblue;
+    text-shadow: 1px 1px 2px black;
+    
+}
+
+nav h2{
+    padding: 0;
+    margin: 10px;
 }
 
 .item-fila{
@@ -44,6 +55,7 @@ main{
 .item{
     width: 8vh;
     background-color: none;
+    z-index: 1;
 }
 
 .prates{
@@ -52,17 +64,11 @@ main{
     width: 100%;
     margin-bottom: 50px;
 }
+
 .shadow{
     background-color: rgb(124, 64, 24);
     height: 15px;
     width: 100%;
-}
-
-
-#cliente{
-    display: flex;
-    width: 100%;
-    align-items: center;
 }
 
 .pedido{
@@ -72,34 +78,52 @@ main{
     height: 65px;
 }
 
-.ui-state-highlight{
-    background-color: aquamarine;
+.s0{
+    fill: #9b9ca1;
+} 
+.s1{
+    fill: #00afef;
+} 
+.s2{
+    fill: #363944;
+}
+.star0{
+    fill:#ffff00;
+    filter: drop-shadow(0 0 3px black);
+}
+#lifes{
+    display: flex;
+    align-items: flex-start;
+    font-size: 1.5em;
+    width: 300px;
+    font-weight: bold;
+    justify-content: space-between;
+    margin-top: 10px;
+    
+}
+#lifes p{
+    padding: 0;
+    margin: 0;
 }
 
-.ui-state-common{
-    background-color: white;
+#loja{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    width: 300px;
+    height: 300px;
+    padding-left: 30px;
+}
+
+#cliente{
+    display: flex;
+    width: 100%;
+    align-items: center;
 }
 
 #cliente-1{
     width: 13vh;
     transform: scaleX(-1);
-}
-
-nav{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    margin: 0;
-    padding: 0;
-    font-size: 2em;
-}
-
-nav h2{
-    padding: 0;
-    margin: 10px;
 }
 
 #mensagem{
@@ -127,15 +151,127 @@ nav h2{
     align-self: flex-end;
 }
 
-#pontuacao{
-    color: aliceblue;
-    text-shadow: 1px 1px 2px black;
-}
-
 #agua{
     margin-top: 20px;
     width: 130px;
     height: 30px;
+}
+
+#mago{
+    
+    margin-right: -50px;
+}
+#caudeirao{
+    display: flex;
+    justify-content: center;
+    width: 210px;
+    flex-wrap: wrap;
+}
+
+
+/* Animações */
+
+@keyframes shine{
+    0% {filter: none; transform: scale(1);}
+    50% {filter: brightness(3) drop-shadow(2px 2px 10px rgb(243, 115, 255)); transform: scale(1.3);}
+    100% {filter: none; transform: scale(1);}
+}
+
+@keyframes change1{
+    0% {fill: #00afef}
+    100% {fill: #ffae00 }
+}
+@keyframes change2{
+    0% {fill: #ffae00}
+    100% {fill: #ff0000 }
+}
+
+@keyframes changeBack{
+    0% {fill: #ff0000}
+    100% {fill: #00afef }
+}
+
+@keyframes shake{
+    0% { transform: translate(1px, 1px) rotate(0deg); }  
+    20% { transform: translate(-3px, 0px) rotate(1deg); } 
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); } 
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@keyframes lostLife{
+    0% {fill: #ffff00}
+    100% {fill: #000000 }
+}
+
+@keyframes happyMage{
+    0% {transform: scaleY(1);}
+    15% {transform: scaleY(0.6);}
+    30% {transform: scaleY(1);}
+    45% {transform: scaleY(0.6);}
+    60% {transform: scaleY(1);}
+    75% {transform: scaleY(0.6);}
+    100% {transform: scaleY(1);}
+}
+
+@keyframes moveMage{
+    0% { transform: translate(1px, 1px) rotate(0deg); top: 0px; }
+    50% { transform: translate( 10px, 0px) rotate(8deg); top: 20px; }
+    100% { transform: translate(1px, 1px) rotate(0deg); top: 0px; }
+}
+
+.happyMage{
+    animation-name: happyMage;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    transform-origin: bottom;
+}
+
+.moveMage{
+    animation-name: moveMage;
+    animation-duration: 1s;
+}
+
+.lostLife{
+    animation-name: lostLife;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.waterBase{
+    animation-name: changeBack;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+} 
+
+.water1{
+    animation-name: change1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.water2{
+    animation-name: change2;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+} 
+
+.itemShine{
+    animation-name: shine;
+    animation-duration: 2s;
+}
+
+.cauldronShake{
+    animation-name: shake;
+    animation-duration: 0.5s;
+}
+
+.ui-state-highlight{
+    background-color: aquamarine;
+}
+
+.ui-state-common{
+    background-color: white;
 }
 
 .backImage{
@@ -146,25 +282,3 @@ nav h2{
     background-color: yellow;
 }
 
-#mago{
-    z-index: 1;
-    margin-right: -100px;
-}
-#caudeirao{
-    display: flex;
-    justify-content: center;
-    width: 210px;
-    flex-wrap: wrap;
-}
-
-.s0{
-    fill: #9b9ca1
-} 
-.s1{fill: #00afef
-} 
-.s2{
-    fill: #363944
-}
-.s3{
-    fill: #ffae00 
-} 
