@@ -53,8 +53,17 @@ $(document).ready(function(){
         let quantidade = caldeirao.length;
         caldeirao.push(ITENS[valor]);
         if(quantidade === 2){
-            const compare = caldeirao.find((v,i) => v !== itensPedido[i])
-            if(compare === undefined){
+            const anyOrder = caldeirao.filter(e => !itensPedido.includes(e));
+            console.log(anyOrder)
+            const compareOrder= caldeirao.find((v,i) => v !== itensPedido[i]);
+            if(compareOrder === undefined){
+                pontuacao += 20;
+                $("#pontuacao").html(pontuacao);
+                alert("Parabéns! Combinação perfeita!");
+                $("#mago").addClass("happyMage");
+                return true;
+            }
+            else if(anyOrder.length === 0){
                 pontuacao += 10;
                 $("#pontuacao").html(pontuacao);
                 alert("Parabéns!");
@@ -128,7 +137,7 @@ $(document).ready(function(){
 
             next();
         });
-        $("#caudeirao").delay(1500).queue(function (next) {
+        $("#caudeirao").delay(1000).queue(function (next) {
             $(this).removeClass("cauldronShake");
             $("#mago").removeClass("moveMage");
             next();
