@@ -38,7 +38,7 @@ nav{
     font-size: 2em;
     color: gold;
     text-shadow: 1px 1px 2px black;
-    
+    z-index: 2;
 }
 
 nav h2{
@@ -101,6 +101,22 @@ nav h2{
     filter: drop-shadow(0 0 3px black);
 }
 
+.stage-star{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    height: 300px;
+    width: 300px;
+    color: black;
+    text-shadow: 1px 1px white;
+    font-size: 2em;
+    background-image: url('../assets/background/star.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 #cauldron{
     display: flex;
     justify-content: flex-start;
@@ -159,6 +175,16 @@ nav h2{
     flex-shrink: 0.5;
 }
 
+#modo-de-jogo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 3;
+}
+
 #play{
     width: 100%;
     height: 100%;
@@ -176,6 +202,30 @@ nav h2{
 
 #pause{
     width: 80px;
+}
+
+#potion{
+    padding-left: 70px;
+    position: absolute;
+    width: 10vh;
+}
+
+#opcoes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35%;
+    padding: 10px;
+    background-color: #ff7900;
+    color: #fff;
+    text-shadow: 1px 1px #000000;
+    border: solid 3px black;
+    border-radius: 10px;
+
+}
+
+#opcoes button{
+    font-size: 1.3em;
 }
 
 #recipe{
@@ -206,6 +256,16 @@ nav h2{
     flex: 1 0.5 250px;
     align-self: flex-end;
     
+}
+
+#stage{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
 }
 
 #water{
@@ -240,6 +300,13 @@ nav h2{
     100% {transform: scaleY(1);}
 }
 
+@keyframes fallingMage{
+    0% {transform: rotate(0deg) translateY(0px);}
+    10% {transform: rotate(-90deg) translateY(-50px);}
+    90% {transform: rotate(-90deg) translateY(-50px);}
+    100% {transform: rotate(0deg) translateY(0px);}
+}
+
 @keyframes lostLife{
     0% {fill: #ffff00}
     100% {fill: #000000 }
@@ -249,6 +316,13 @@ nav h2{
     0% { transform: translate(1px, 1px) rotate(0deg); top: 0px; }
     50% { transform: translate( 10px, 0px) rotate(8deg); top: 20px; }
     100% { transform: translate(1px, 1px) rotate(0deg); top: 0px; }
+}
+
+@keyframes potionRise{
+    0% {transform: translateY(0px); filter: none;}
+    25% {transform: translateY(-80px); filter: none;}
+    50% {filter: brightness(2) drop-shadow(2px 2px 10px rgb(243, 115, 255)); transform: scale(1.2) translateY(-80px) translateX(-5px);}
+    100% {filter: brightness(2) drop-shadow(2px 2px 10px rgb(243, 115, 255)); transform: scale(1) translateY(-80px);}
 }
 
 @keyframes shake{
@@ -271,6 +345,10 @@ nav h2{
     80% { transform: translate(2px, -2px) rotate(6deg) scale(1.05);}
     90% { transform: translate(-6px, 2px) rotate(0deg) scale(1.03);} 
     100% { transform: translate(2px, -4px) rotate(-6deg) scale(1);}
+}
+
+@keyframes star-rotate{
+    100%{transform: rotateX(-10deg);}
 }
 
 @keyframes shine{
@@ -308,6 +386,11 @@ nav h2{
     transform-origin: bottom;
 }
 
+.fallingMage{
+    animation-name: fallingMage;
+    animation-duration: 3s;
+}
+
 .itemShine{
     animation-name: shine;
     animation-duration: 1s;
@@ -329,6 +412,16 @@ nav h2{
     animation-duration: 1s;
 }
 
+.potionRise{
+    animation-name: potionRise;
+    animation-duration: 4s;
+}
+
+.stage-star-rotate{
+    animation-name: star-rotate;
+    animation-duration: 2s;
+}
+
 .waterBase{
     animation-name: changeBack;
     animation-duration: 1s;
@@ -344,4 +437,4 @@ nav h2{
     animation-name: change2;
     animation-duration: 1s;
     animation-fill-mode: forwards;
-} 
+}

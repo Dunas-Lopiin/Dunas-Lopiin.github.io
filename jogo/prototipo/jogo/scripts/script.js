@@ -4,10 +4,17 @@ $(document).ready(function(){
     let gamePaused = true;
     const soundTremor = new Audio('assets/sons/Retro Impact Water 03.wav');
     const music = new Audio('assets/sons/music1.wav');
+    let currentStage = 1;
+    /* Conta as vidas */
     let lives = 3;
+
+    /* conta os pontos */
     let score = 0;
     /* Itens necessários para fazer a poção */
     let itensAsked = [];
+
+    /* define o modo de jogo */
+    let gameMode;
 
     /* Itens que o jogador colocou no caldeirão */
     let cauldron = [];
@@ -29,16 +36,35 @@ $(document).ready(function(){
     class animations {
         constructor(){};
 
+        /* Animação do mago ao acertar a poção */
         mageVictory(){
             $("#mage").removeClass("happyMage");
             $("#mage").addClass("happyMage");
         }
+
+        /* Animação do mago ao errar a poção */
+        mageDefeat(){
+            $("#mage").removeClass("fallingMage");
+            $("#mage").addClass("fallingMage");
+        }
         
+        /* Animação do caudeirão quando a poção é feita */
         finishedPotion(){
             $("#cauldron").addClass("cauldronShake2");
             $("main").addClass("backgroundShake");
         }
 
+        /* Poção sobe do caudeirão caso a sequencia de itens esteja certa */
+        potionShine(){
+            $("#potion").show();
+            $("#potion").addClass("potionRise");
+        }
+        potionHide(){
+            $("#potion").fadeOut("fast");
+        }
+
+
+        /* retira o brilho dos ingredientes */
         hideShine(){
             $(".pedido").delay(2000).queue(function(next) {
                 $(this).fadeOut();
@@ -50,6 +76,7 @@ $(document).ready(function(){
             })
         }
         
+        /* Faz os ingredientes escolhidos brilharem */
         showShine(){
             $("#pedido").remove();
             for(let i = 0; i < numberIngredients -1; i++){
@@ -73,13 +100,22 @@ $(document).ready(function(){
               });
         }
 
+        starAppear(){
+            $("#stage").fadeIn("slow");
+        }
+
+        /* retira as animações que ainda estão ativas */
         removeAnimations(){
             $(`.item`).removeClass('itemShine');
             $("#cauldron").removeClass("cauldronShake cauldronShake2");
             $("main").removeClass("backgroundShake");
-            $("#mage").removeClass("happyMage");
+            $("#mage").removeClass("happyMage fallingMage");
+            $("#potion").removeClass("potionRise");
+            $("#potion").hide();
+            $("#stage").fadeOut("fast");
         }
 
+        /* muda a cor da água do caudeirão */
         changeColor(){
             const classList = $("#water").attr("class");
             $("#mage").addClass("moveMage");
@@ -111,6 +147,7 @@ $(document).ready(function(){
 
     }
 
+    /* Define o objeto que governa as animações */
     const gameAnimations = new animations();
 
     /* Toca a musica de fundo */
@@ -132,15 +169,31 @@ $(document).ready(function(){
         soundShine.play();
     }
 
+    /* Efeito sonoro de quando a poção sai do caudeirão */
+    function potionSfx(){
+        const createdPotion = new Audio('assets/sons/Retro Charge Magic 11.wav');
+        createdPotion.play();
+    }
+
+    function wrongSfx(){
+        const wrongChoice = new Audio('assets/sons/Retro Negative Short 23.wav');
+        wrongChoice.play();
+    }
+
+    /* Define as funções básicas do jogo */
     class gameFunctions{
         constructor(){};
 
+        /* Acontece quando o jogador acerta a sequencia de ingredientes */
         victory(){
+            gameAnimations.removeAnimations();
+            $("#potion").attr("src", `./assets/escolhidos/pocoes/${numberIngredients}.png`);
             numberIngredients = numberIngredients +1;
             actualLotery();
-            setTimeout(showLotery ,2000);
+            setTimeout(showLotery ,500);
         };
         
+        /* Preenche as prateleiras de itens */
         fillShelves(){
             for(let i = 0; i < 9; i++){
                 if(i < 3){
@@ -155,8 +208,13 @@ $(document).ready(function(){
             }
         };
 
+        /* Sorteia os ingredientes que deverão se jogados no caudeirão
+            Caso o IF não esteja comentado os ingredientes serão sorteados aleatóriamentes
+        */
         lotery(){
-            //itensAsked = [];
+            if(gameMode === "random"){
+                itensAsked = [];
+            }
             let arrayCopia = [...ITENS];
             let numero = arrayCopia.length - 1;
             for(let i = itensAsked.length; i < numberIngredients; i++){
@@ -169,39 +227,48 @@ $(document).ready(function(){
             }
         };
 
+        /* Contagem de vida */
         lifeCount(){
             if(lives > 1){
+                gameAnimations.removeAnimations();
                 $(`#life${lives}`).addClass("lostLife");
                 lives = lives -1;
-               // alert("Errou!");
                 cauldron = [];
                 actualLotery();
-                setTimeout(showLotery ,1000);
+                setTimeout(showLotery ,3500);
             }
             else{
-               // alert("Game Over!");
+                gameAnimations.removeAnimations();
+                $(`#life${lives}`).addClass("lostLife");
+                lives = lives -1;
+                alert("GAME OVER");
             }
         }
 
+        /* Começa o jogo */
         gameStart(){
             gamePaused = false;
             $("main").removeClass("blur");
             $("#play").fadeOut("slow");
             musicPlay();
             actualLotery();
-            setTimeout(showLotery ,1000);
+            gameAnimations.starAppear();
+            setTimeout(showLotery ,2000);
         };
     
+        /* Pausa o jogo */
         pauseGame(){
             gamePaused = true;
             clearTimeout(showLotery);
             gameAnimations.removeAnimations();
+            $("#stage").hide();
             $("main").addClass("blur");
             $("#play").fadeIn("slow");
             music.pause();
         };
     }
 
+    /* Define o objeto que governa as funções do jogo */
     const gameSettings = new gameFunctions();
 
 
@@ -212,34 +279,31 @@ $(document).ready(function(){
     
     /* Adiciona os itens jogados no caldeirão em um array e no final compara se os itens jogados foram os corretos */
     function potionMaking(valor){
-        let quantidade = cauldron.length;
+        let quantity = cauldron.length;
         cauldron.push(ITENS[valor]);
-        if(quantidade === numberIngredients - 1){
+
+        if(quantity === numberIngredients - 1){
             gameAnimations.removeAnimations();
             soundTremor.play();
             setTimeout(gameAnimations.finishedPotion, 50);
-            
-            const anyOrder = cauldron.filter(e => !itensAsked.includes(e));
             const compareOrder= cauldron.find((v,i) => v !== itensAsked[i]);
             if(compareOrder === undefined){
+                currentStage++;
                 score += 500 * numberIngredients;
                 $("#score").html(score);
-                //alert("Parabéns! Combinação perfeita!");
+                $("#current-stage").html(currentStage);
                 setTimeout(gameAnimations.mageVictory, 1000);
-                setTimeout(gameSettings.victory , 3500);
-                cauldron = [];
-                return true;
-            }
-            else if(anyOrder.length === 0){
-                score += 250 * numberIngredients;
-                $("#score").html(score);
-                //alert("Parabéns!");
-                setTimeout(gameAnimations.mageVictory, 1000);
-                setTimeout(gameSettings.victory, 3500);
+                setTimeout(gameAnimations.potionShine, 1000);
+                setTimeout(potionSfx, 2000);
+                setTimeout(gameAnimations.potionHide, 4500);
+                setTimeout(gameAnimations.starAppear, 4500);
+                setTimeout(gameSettings.victory , 6500);
                 cauldron = [];
                 return true;
             }
             else{
+                setTimeout(gameAnimations.mageDefeat, 1000);
+                setTimeout(wrongSfx, 1000);
                 gameSettings.lifeCount();
             }
         }
@@ -281,7 +345,9 @@ $(document).ready(function(){
         })
     }
     
+    /* Faz os ingredientes brilharem */
     function showLotery(){
+        gameAnimations.removeAnimations();
         if(gamePaused){
             return false;
         }
@@ -295,6 +361,20 @@ $(document).ready(function(){
                 next();
             });
         }
+    }
+
+    /* Ativa o modo de jogo aleatório */
+    function randomMode(){
+        $("#modo-de-jogo").fadeOut("slow");
+        $("#play").fadeIn("slow");
+        gameMode = "random";
+    }
+
+    /* Ativa o modo de jogo sequencial */
+    function sequentialMode(){
+        $("#modo-de-jogo").fadeOut("slow");
+        $("#play").fadeIn("slow");
+        gameMode = "";
     }
 
     fetch(`${url}/`)
@@ -312,7 +392,13 @@ $(document).ready(function(){
          }
       )
     .catch(function (err) { console.log('Fetch Error :-S', err); }); 
-
+    
+    /* Define configurações iniciais do jogo */
+    $("#stage").hide();
+    $("#play").hide();
+    $("#potion").hide();
+    $("#random").on("click", randomMode);
+    $("#sequential").on("click", sequentialMode);
     $("#play").on("click", gameSettings.gameStart);
     $("#pause").on("click", gameSettings.pauseGame);
 });
