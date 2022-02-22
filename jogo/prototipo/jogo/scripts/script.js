@@ -6,7 +6,7 @@ $(document).ready(function(){
     const music = new Audio('assets/sons/music1.wav');
     let currentStage = 1;
     /* Conta as vidas */
-    let lives = 3;
+    let lives = 1;
 
     /* conta os pontos */
     let score = 0;
@@ -104,6 +104,14 @@ $(document).ready(function(){
             $("#stage").fadeIn("slow");
         }
 
+        gameOver(){
+            $("#back-star").removeClass("stage-star");
+            $("#back-star").addClass("stage-bomb");
+            $("main").addClass("blur");
+            $("#back-star h2").html("GAME <br> OVER <span id='current-stage'></span>");
+            $("#stage").fadeIn("slow");
+        }
+
         /* retira as animações que ainda estão ativas */
         removeAnimations(){
             $(`.item`).removeClass('itemShine');
@@ -111,6 +119,8 @@ $(document).ready(function(){
             $("main").removeClass("backgroundShake");
             $("#mage").removeClass("happyMage fallingMage");
             $("#potion").removeClass("potionRise");
+            $("#back-star").removeClass("stage-bomb");
+            $("#back-star").addClass("stage-star");
             $("#potion").hide();
             $("#stage").fadeOut("fast");
         }
@@ -147,6 +157,94 @@ $(document).ready(function(){
 
     }
 
+        /* Define as funções básicas do jogo */
+        class gameFunctions{
+            constructor(){};
+    
+            /* Acontece quando o jogador acerta a sequencia de ingredientes */
+            victory(){
+                $("#potion").attr("src", `./assets/escolhidos/pocoes/${numberIngredients}.png`);
+            };
+            
+            /* Preenche as prateleiras de itens */
+            fillShelves(){
+                for(let i = 0; i < 9; i++){
+                    if(i < 3){
+                        $("#itens-1").append(`<img src="${ITENS[i].src}" id="${ITENS[i].id}" class="item">`)
+                    }
+                    else if(i < 6){
+                        $("#itens-2").append(`<img src="${ITENS[i].src}" id="${ITENS[i].id}" class="item">`)
+                    }
+                    else{
+                        $("#itens-3").append(`<img src="${ITENS[i].src}" id="${ITENS[i].id}" class="item">`)
+                    }
+                }
+            };
+    
+            /* Sorteia os ingredientes que deverão se jogados no caudeirão
+                Caso o IF não esteja comentado os ingredientes serão sorteados aleatóriamentes
+            */
+            lotery(){
+                if(gameMode === "random"){
+                    itensAsked = [];
+                }
+                let copyArray = [...ITENS];
+                let number = copyArray.length - 1;
+                for(let i = itensAsked.length; i < numberIngredients; i++){
+                    number = copyArray.length - 1;
+                    let randomizer = parseInt(Math.random() * (number - 0) + 0);
+                    while(i > 0 && copyArray[randomizer] === itensAsked[i-1]){
+                        randomizer = parseInt(Math.random() * (number - 0) + 0);
+                    }
+                    itensAsked.push(copyArray[randomizer]);
+                }
+            };
+    
+            /* Contagem de vida */
+            lifeCount(){
+                if(lives > 1){
+                    gameAnimations.removeAnimations();
+                    $(`#life${lives}`).addClass("lostLife");
+                    lives = lives -1;
+                    cauldron = [];
+                    this.lotery();
+                    setTimeout(showLotery ,3500);
+                }
+                else{
+                    gameAnimations.removeAnimations();
+                    $(`#life${lives}`).addClass("lostLife");
+                    lives = lives -1;
+                    currentStage = 1;
+                    setTimeout(gameAnimations.gameOver, 3500);
+                    setTimeout(startConfiguration, 6000);
+                }
+            }
+    
+            /* Começa o jogo */
+            gameStart(){
+                gamePaused = false;
+                $("#back-star h2").html(`FASE <span id="current-stage"></span>`);
+                $("#current-stage").html(currentStage);
+                $("main").removeClass("blur");
+                $("#play").fadeOut("slow");
+                musicPlay();
+                actualLotery();
+                gameAnimations.starAppear();
+                setTimeout(showLotery ,2000);
+            };
+        
+            /* Pausa o jogo */
+            pauseGame(){
+                gamePaused = true;
+                clearTimeout(showLotery);
+                gameAnimations.removeAnimations();
+                $("#stage").hide();
+                $("main").addClass("blur");
+                $("#play").fadeIn("slow");
+                music.pause();
+            };
+        }
+
     /* Define o objeto que governa as animações */
     const gameAnimations = new animations();
 
@@ -180,93 +278,7 @@ $(document).ready(function(){
         wrongChoice.play();
     }
 
-    /* Define as funções básicas do jogo */
-    class gameFunctions{
-        constructor(){};
 
-        /* Acontece quando o jogador acerta a sequencia de ingredientes */
-        victory(){
-            gameAnimations.removeAnimations();
-            $("#potion").attr("src", `./assets/escolhidos/pocoes/${numberIngredients}.png`);
-            numberIngredients = numberIngredients +1;
-            actualLotery();
-            setTimeout(showLotery ,500);
-        };
-        
-        /* Preenche as prateleiras de itens */
-        fillShelves(){
-            for(let i = 0; i < 9; i++){
-                if(i < 3){
-                    $("#itens-1").append(`<img src="${ITENS[i].src}" id="${ITENS[i].id}" class="item">`)
-                }
-                else if(i < 6){
-                    $("#itens-2").append(`<img src="${ITENS[i].src}" id="${ITENS[i].id}" class="item">`)
-                }
-                else{
-                    $("#itens-3").append(`<img src="${ITENS[i].src}" id="${ITENS[i].id}" class="item">`)
-                }
-            }
-        };
-
-        /* Sorteia os ingredientes que deverão se jogados no caudeirão
-            Caso o IF não esteja comentado os ingredientes serão sorteados aleatóriamentes
-        */
-        lotery(){
-            if(gameMode === "random"){
-                itensAsked = [];
-            }
-            let arrayCopia = [...ITENS];
-            let numero = arrayCopia.length - 1;
-            for(let i = itensAsked.length; i < numberIngredients; i++){
-                numero = arrayCopia.length - 1;
-                let sorteado = parseInt(Math.random() * (numero - 0) + 0);
-                while(i > 0 && arrayCopia[sorteado] === itensAsked[i-1]){
-                    sorteado = parseInt(Math.random() * (numero - 0) + 0);
-                }
-                itensAsked.push(arrayCopia[sorteado]);
-            }
-        };
-
-        /* Contagem de vida */
-        lifeCount(){
-            if(lives > 1){
-                gameAnimations.removeAnimations();
-                $(`#life${lives}`).addClass("lostLife");
-                lives = lives -1;
-                cauldron = [];
-                actualLotery();
-                setTimeout(showLotery ,3500);
-            }
-            else{
-                gameAnimations.removeAnimations();
-                $(`#life${lives}`).addClass("lostLife");
-                lives = lives -1;
-                alert("GAME OVER");
-            }
-        }
-
-        /* Começa o jogo */
-        gameStart(){
-            gamePaused = false;
-            $("main").removeClass("blur");
-            $("#play").fadeOut("slow");
-            musicPlay();
-            actualLotery();
-            gameAnimations.starAppear();
-            setTimeout(showLotery ,2000);
-        };
-    
-        /* Pausa o jogo */
-        pauseGame(){
-            gamePaused = true;
-            clearTimeout(showLotery);
-            gameAnimations.removeAnimations();
-            $("#stage").hide();
-            $("main").addClass("blur");
-            $("#play").fadeIn("slow");
-            music.pause();
-        };
-    }
 
     /* Define o objeto que governa as funções do jogo */
     const gameSettings = new gameFunctions();
@@ -278,7 +290,7 @@ $(document).ready(function(){
     }
     
     /* Adiciona os itens jogados no caldeirão em um array e no final compara se os itens jogados foram os corretos */
-    function potionMaking(valor){
+    function validatePotion(valor){
         let quantity = cauldron.length;
         cauldron.push(ITENS[valor]);
 
@@ -288,16 +300,7 @@ $(document).ready(function(){
             setTimeout(gameAnimations.finishedPotion, 50);
             const compareOrder= cauldron.find((v,i) => v !== itensAsked[i]);
             if(compareOrder === undefined){
-                currentStage++;
-                score += 500 * numberIngredients;
-                $("#score").html(score);
-                $("#current-stage").html(currentStage);
-                setTimeout(gameAnimations.mageVictory, 1000);
-                setTimeout(gameAnimations.potionShine, 1000);
-                setTimeout(potionSfx, 2000);
-                setTimeout(gameAnimations.potionHide, 4500);
-                setTimeout(gameAnimations.starAppear, 4500);
-                setTimeout(gameSettings.victory , 6500);
+                nextLevel();
                 cauldron = [];
                 return true;
             }
@@ -324,7 +327,7 @@ $(document).ready(function(){
         accept: `.item`,
         drop: function( event, ui ) {
             $( this )
-                potionMaking(ui.draggable.attr("id"));
+                validatePotion(ui.draggable.attr("id"));
                 gameAnimations.removeAnimations();
                 gameAnimations.changeColor();
                 droppingSound();
@@ -365,6 +368,11 @@ $(document).ready(function(){
 
     /* Ativa o modo de jogo aleatório */
     function randomMode(){
+        $(`.star0`).removeClass("lostLife");
+        currentStage = 1;
+        numberIngredients = 3;
+        lives = 3;
+        $("#current-stage").html(currentStage);
         $("#modo-de-jogo").fadeOut("slow");
         $("#play").fadeIn("slow");
         gameMode = "random";
@@ -372,31 +380,52 @@ $(document).ready(function(){
 
     /* Ativa o modo de jogo sequencial */
     function sequentialMode(){
+        $(`.star0`).removeClass("lostLife");
+        currentStage = 1;
+        numberIngredients = 3;
+        lives = 3;
+        $("#current-stage").html(currentStage);
         $("#modo-de-jogo").fadeOut("slow");
         $("#play").fadeIn("slow");
         gameMode = "";
     }
-
-    fetch(`${url}/`)
-      .then(
-         function (response) {
-            if (response.status !== 200) {
-               console.log('Looks like there was a problem. Status Code: ' + response.status);
-               return;
-            }
-
-            // Examine the text in the response
-            response.json().then(function (data) {
-               console.log(data);
-            });
-         }
-      )
-    .catch(function (err) { console.log('Fetch Error :-S', err); }); 
     
     /* Define configurações iniciais do jogo */
-    $("#stage").hide();
-    $("#play").hide();
-    $("#potion").hide();
+    
+    function startConfiguration(){
+        cauldron = [];
+        itensAsked = [];
+        gameAnimations.removeAnimations();
+        $("#modo-de-jogo").fadeIn("slow");
+        $("#stage").hide();
+        $("#back-star").removeClass("stage-bomb");
+        $("#back-star").addClass("stage-bomb");
+        $("#play").hide();
+        $("#potion").hide();
+    }
+
+    function startVictory(){
+        gameAnimations.removeAnimations();
+        numberIngredients = numberIngredients +1;
+        actualLotery();
+        setTimeout(showLotery ,500);
+    }
+
+    function nextLevel(){
+        currentStage++;
+        score += 500 * numberIngredients;
+        $("#score").html(score);
+        $("#current-stage").html(currentStage);
+        setTimeout(gameAnimations.mageVictory, 1000);
+        setTimeout(gameAnimations.potionShine, 1000);
+        setTimeout(potionSfx, 2000);
+        setTimeout(gameAnimations.potionHide, 4500);
+        setTimeout(gameAnimations.starAppear, 4500);
+        setTimeout(gameSettings.victory , 6500);
+        setTimeout(startVictory, 6500);
+    }
+
+    startConfiguration();
     $("#random").on("click", randomMode);
     $("#sequential").on("click", sequentialMode);
     $("#play").on("click", gameSettings.gameStart);
