@@ -237,7 +237,8 @@ $(document).ready(function(){
 
     function addCharacter(){
         let link = $("#char-src").val();
-        $("#character").attr("src", link);
+        console.log(link);
+        //$("#character").attr("src", link);
     }
 
     $("#send").on("click", addCharacter);
