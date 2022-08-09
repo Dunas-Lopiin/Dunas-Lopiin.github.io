@@ -37,7 +37,7 @@ export const produtos = [
   },
   {
     id: 4,
-    nome: "Machado de batalha ",
+    nome: "Machado de batalha",
     preco: "300.00",
     secao: "Armas",
     categorias: ["equipamentos", "2 mãos", "físico"],
