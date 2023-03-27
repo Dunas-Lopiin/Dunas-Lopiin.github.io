@@ -1,4 +1,4 @@
-import { produtos } from "./dataProdutos.js";
+import { produtos } from "./dataMagicos.js";
 
 let carrinho = [];
 let cardList = document.querySelector(".card__list");
@@ -117,9 +117,10 @@ function buscaPorNome(array, busca) {
   if (busca.trim() === "") {
     return false;
   }
-  if (busca.trim().toLowerCase() === "peixaria") {
+
+  if (busca.trim().toLowerCase() === "sair") {
     console.log("entrou");
-    window.location.href = "./mercado-negro.html";
+    window.location.href = "./index.html";
   }
 
   for (let i = 0; i < array.length; i++) {

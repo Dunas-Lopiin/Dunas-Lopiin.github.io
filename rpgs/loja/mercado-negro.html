@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/css/mercado.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fontawesome.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>O MERCADO NEGRO</title>
+  </head>
+  <body>
+    <!-- CABEÇALHO -->
+    <header>
+      <h1>O MERCADO NEGRO</h1>
+    </header>
+    <!-- PARTE PRINCIPAL -->
+    <main>
+      <section class="filtersContainer">
+        <div id="botoesContainer">
+          <button class="estiloGeralBotoes estiloGeralBotoes--filter">
+            Todos Produtos
+          </button>
+          <button class="estiloGeralBotoes estiloGeralBotoes--filter">
+            Armas
+          </button>
+          <button class="estiloGeralBotoes estiloGeralBotoes--filter">
+            Armaduras
+          </button>
+          <button class="estiloGeralBotoes estiloGeralBotoes--filter">
+            Escudos
+          </button>
+          <button class="estiloGeralBotoes estiloGeralBotoes--filter">
+            Consumíveis
+          </button>
+          <button class="estiloGeralBotoes estiloGeralBotoes--filter">
+            Variedades
+          </button>
+        </div>
+
+        <div class="containerBuscaPorNome">
+          <input
+            type="text"
+            placeholder="Pesquisar por"
+            class="campoBuscaPorNome"
+          />
+          <button
+            class="estiloGeralBotoes estiloGeralBotoes--botaoBuscaPorNome"
+          >
+            <img src="./src/img/search.png" alt="lupa" />
+          </button>
+        </div>
+      </section>
+      <!--       <section class="priceContainer">
+        <div>
+          <img src="./src/img/alert-circle.png" alt="exclamação de alerta" />
+          <p>Valor total dos produtos da sessão selecionada</p>
+        </div>
+        <span>R$ 0.00</span>
+      </section> -->
+      <!-- CONTAINER DE PRODUTOS -->
+      <section class="containerVitrine">
+        <div class="containerListaProdutos">
+          <ul>
+            <!-- Utilize esse item html como template para a construção da lista de produtos
+                    
+                    Você pode remover esses comentários depois que fizer a construção pelo DOM -->
+
+            <!-- <li>
+                        <img src="./src/img/maça.png" alt="Imagem maçã">
+                        <h3>Maçã</h3>
+                        <span>Hortifruti</span>
+                        <p>R$ 2.00</p>
+                    </li> -->
+          </ul>
+        </div>
+        <aside class="lateral">
+          <section class="cart">
+            <header class="cart__header">
+              <h3 class="cart__title">
+                <img src="./src/img/carrinho.svg" alt="carrinho" />Carrinho
+              </h3>
+            </header>
+            <main class="cart__content">
+              <ul class="card__list">
+                <li class="cart--empty">
+                  <img src="./src/img/shopping-bag.png" alt="sacola" />
+                  <h2>Por enquanto não temos produtos no carrinho</h2>
+                </li>
+              </ul>
+            </main>
+            <footer class="cart__footer cart__footer--hidden">
+              <div class="cart__quantity">
+                <p class="cart__footer__title">Quantidade:</p>
+                <p class="cart__footer__number cart__quant">0</p>
+              </div>
+              <div class="cart__total">
+                <p class="cart__footer__title">Total:</p>
+                <p class="cart__footer__number cart__price">R$ 0,00</p>
+              </div>
+            </footer>
+          </section>
+        </aside>
+      </section>
+    </main>
+    <script type="module" src="src/js/dataMagicos.js"></script>
+    <script type="module" src="src/js/scriptMagico.js"></script>
+  </body>
+</html>
